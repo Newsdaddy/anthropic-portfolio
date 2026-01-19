@@ -5,83 +5,88 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 /* 
-  Design System: 담백한 이력 문서 스타일
-  - 과장 없음, 사실 중심
-  - 여백으로 숨쉬는 레이아웃
+  Design System: Simon Seo 스타일 - 다크 모드, 하이테크 감성
+  - 다크 배경 + 주황 포인트 컬러
+  - 숫자 기반 하이라이트
+  - 현대적이고 세련된 미니멀리즘
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 12%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 0 0% 12%;
+    --primary: 24 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 12%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 96%;
+    --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 12%;
+    --accent: 24 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 12%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 24 100% 50%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
     /* Custom tokens */
-    --text-subtle: 0 0% 55%;
-    --text-muted: 0 0% 65%;
-    --divider: 0 0% 92%;
-    --hover-bg: 0 0% 97%;
+    --text-subtle: 0 0% 50%;
+    --text-muted: 0 0% 60%;
+    --divider: 0 0% 90%;
+    --hover-bg: 0 0% 95%;
+    --gradient-start: 24 100% 50%;
+    --gradient-end: 35 100% 55%;
   }
 
   .dark {
-    --background: 0 0% 6%;
+    --background: 0 0% 7%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 8%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 8%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 6%;
+    --primary: 24 100% 55%;
+    --primary-foreground: 0 0% 5%;
 
     --secondary: 0 0% 14%;
     --secondary-foreground: 0 0% 95%;
 
     --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 0 0% 55%;
 
-    --accent: 0 0% 14%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 24 100% 55%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 0 0% 80%;
+    --ring: 24 100% 55%;
 
-    --text-subtle: 0 0% 50%;
-    --text-muted: 0 0% 40%;
-    --divider: 0 0% 15%;
-    --hover-bg: 0 0% 10%;
+    --text-subtle: 0 0% 55%;
+    --text-muted: 0 0% 45%;
+    --divider: 0 0% 18%;
+    --hover-bg: 0 0% 12%;
+    --gradient-start: 24 100% 55%;
+    --gradient-end: 35 100% 60%;
   }
 }
 
@@ -118,5 +123,20 @@
 
   .hover-surface:hover {
     background-color: hsl(var(--hover-bg));
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+
+  .glow {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
   }
 }

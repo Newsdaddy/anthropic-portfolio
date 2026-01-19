@@ -10,10 +10,10 @@ export default {
       padding: "1.5rem",
       screens: {
         sm: "640px",
-        md: "720px",
-        lg: "720px",
-        xl: "720px",
-        "2xl": "720px",
+        md: "768px",
+        lg: "900px",
+        xl: "900px",
+        "2xl": "900px",
       },
     },
     extend: {
@@ -61,6 +61,8 @@ export default {
       },
       fontSize: {
         "2xs": ["0.6875rem", { lineHeight: "1.4" }],
+        "display": ["3.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-sm": ["2.5rem", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
       },
       spacing: {
         "18": "4.5rem",
@@ -68,17 +70,22 @@ export default {
       },
       keyframes: {
         "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "slide-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-20px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
-        "fade-up": "fade-up 0.5s ease-out forwards",
-        "fade-in": "fade-in 0.4s ease-out forwards",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
+        "slide-in-left": "slide-in-left 0.6s ease-out forwards",
       },
     },
   },
