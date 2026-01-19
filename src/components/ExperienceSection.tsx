@@ -1,18 +1,27 @@
 import { FadeIn } from "./FadeIn";
 
 interface ExperienceItemProps {
-  title: string;
-  org: string;
-  detail: string;
+  period: string;
+  role: string;
+  company: string;
+  highlight: string;
   delay: number;
 }
 
-const ExperienceItem = ({ title, org, detail, delay }: ExperienceItemProps) => (
+const ExperienceItem = ({ period, role, company, highlight, delay }: ExperienceItemProps) => (
   <FadeIn delay={delay}>
-    <div className="py-5 border-b divider">
-      <p className="font-medium mb-1">{title}</p>
-      <p className="text-sm text-subtle">{org}</p>
-      <p className="text-sm text-muted-foreground mt-2">{detail}</p>
+    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 py-4 border-b border-border group hover:bg-card/50 transition-colors -mx-4 px-4 rounded-lg">
+      <span className="text-xs font-medium text-muted-foreground md:w-28 shrink-0">
+        {period}
+      </span>
+      <div className="flex-1">
+        <span className="font-medium">{role}</span>
+        <span className="text-muted-foreground mx-2">·</span>
+        <span className="text-muted-foreground">{company}</span>
+      </div>
+      <span className="text-sm text-primary font-medium">
+        {highlight}
+      </span>
     </div>
   </FadeIn>
 );
@@ -20,38 +29,42 @@ const ExperienceItem = ({ title, org, detail, delay }: ExperienceItemProps) => (
 export const ExperienceSection = () => {
   const experiences = [
     {
-      title: "시사 다큐멘터리 연출",
-      org: "KBS",
-      detail: "한국PD대상 수상. 시청률 12% 기록.",
+      period: "2012 — 2014",
+      role: "Announcer",
+      company: "Busan MBC",
+      highlight: "Daily Live Anchor",
     },
     {
-      title: "콘텐츠 팀 리드",
-      org: "테크 스타트업 A사",
-      detail: "월 조회수 500만 달성. 팀 10명 빌딩.",
+      period: "2011 — 2012",
+      role: "News Anchor",
+      company: "Maeil Business TV",
+      highlight: "Stock Market Analysis",
     },
     {
-      title: "APAC 세일즈 매니저",
-      org: "글로벌 SaaS 기업 B사",
-      detail: "신규 시장 매출 $2M 달성. 파트너 20개사 확보.",
+      period: "2008",
+      role: "Soldier",
+      company: "Zaytun Division, Iraq",
+      highlight: "UN Peacekeeping",
     },
   ];
 
   return (
     <section className="py-12 md:py-16">
-      <FadeIn delay={0.55}>
-        <h2 className="text-xs uppercase tracking-wider text-subtle mb-6">
-          대표 경험
-        </h2>
+      <FadeIn delay={0.8}>
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+            Earlier Experience
+          </span>
+          <div className="flex-1 h-px bg-border" />
+        </div>
       </FadeIn>
-      
+
       <div>
         {experiences.map((exp, index) => (
           <ExperienceItem
-            key={exp.title}
-            title={exp.title}
-            org={exp.org}
-            detail={exp.detail}
-            delay={0.6 + index * 0.08}
+            key={exp.company}
+            {...exp}
+            delay={0.85 + index * 0.05}
           />
         ))}
       </div>

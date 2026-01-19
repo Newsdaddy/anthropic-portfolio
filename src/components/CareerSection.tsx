@@ -1,20 +1,44 @@
 import { FadeIn } from "./FadeIn";
 
-interface CareerItemProps {
-  category: string;
-  description: string;
+interface CareerCardProps {
+  number: string;
+  period: string;
+  role: string;
+  company: string;
+  location: string;
+  achievements: string[];
   delay: number;
 }
 
-const CareerItem = ({ category, description, delay }: CareerItemProps) => (
+const CareerCard = ({ number, period, role, company, location, achievements, delay }: CareerCardProps) => (
   <FadeIn delay={delay}>
-    <div className="py-5 border-b divider">
-      <span className="text-xs uppercase tracking-wider text-subtle block mb-2">
-        {category}
-      </span>
-      <p className="text-base md:text-lg">
-        {description}
-      </p>
+    <div className="group relative p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300">
+      <div className="absolute top-4 right-4 text-6xl font-bold text-muted/30 select-none">
+        {number}
+      </div>
+      
+      <div className="relative">
+        <p className="text-xs font-medium text-primary mb-2">
+          {period}
+        </p>
+        
+        <h3 className="text-xl font-bold mb-1">
+          {role}
+        </h3>
+        
+        <p className="text-sm text-muted-foreground mb-4">
+          {company} · {location}
+        </p>
+        
+        <ul className="space-y-2">
+          {achievements.map((achievement, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+              <span className="text-primary mt-1.5 text-xs">●</span>
+              <span>{achievement}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </FadeIn>
 );
@@ -22,34 +46,60 @@ const CareerItem = ({ category, description, delay }: CareerItemProps) => (
 export const CareerSection = () => {
   const careers = [
     {
-      category: "방송 · 미디어",
-      description: "KBS, MBC에서 PD로 시사·교양 프로그램 제작. 다수의 다큐멘터리 연출.",
+      number: "01",
+      period: "2021 — 2026",
+      role: "Sr. Business Development Manager",
+      company: "Statista GmbH",
+      location: "Hamburg, Germany",
+      achievements: [
+        "한국 시장 SaaS 플랫폼 런칭 및 안착",
+        "YoY 67%+ 매출 성장 달성",
+        "PwC, KPMG, Deloitte 등 컨설팅사 파트너십 구축",
+      ],
     },
     {
-      category: "콘텐츠 전략",
-      description: "스타트업 콘텐츠팀 리드. 브랜드 저널리즘 기획 및 운영.",
+      number: "02",
+      period: "2016 — 2019",
+      role: "Editor-in-Chief",
+      company: "BBC Science Korea",
+      location: "Seoul, Korea",
+      achievements: [
+        "4,714개 과학 기사 발행 및 편집 총괄",
+        "570개 BBC 기사 번역 검수",
+        "B2B 광고 시장 개척, YoY 42%+ 매출 성장",
+      ],
     },
     {
-      category: "글로벌 B2B",
-      description: "미국·유럽 시장 진출 전략 수립. 현지 파트너십 구축 및 세일즈.",
+      number: "03",
+      period: "2015 — 2019",
+      role: "TV News Anchor",
+      company: "YTN",
+      location: "Seoul, Korea",
+      achievements: [
+        "2018 남북정상회담 특집 방송 진행 (15회)",
+        "4년간 일일 뉴스 생방송 앵커",
+        "2017 대선·탄핵 특집 방송 진행",
+      ],
     },
   ];
 
   return (
     <section className="py-12 md:py-16">
-      <FadeIn delay={0.3}>
-        <h2 className="text-xs uppercase tracking-wider text-subtle mb-6">
-          커리어 요약
-        </h2>
+      <FadeIn delay={0.5}>
+        <div className="flex items-center gap-3 mb-8">
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+            Career
+          </span>
+          <div className="flex-1 h-px bg-border" />
+        </div>
       </FadeIn>
-      
-      <div>
+
+      <div className="grid gap-4 md:gap-6">
         {careers.map((career, index) => (
-          <CareerItem
-            key={career.category}
-            category={career.category}
-            description={career.description}
-            delay={0.35 + index * 0.08}
+          <CareerCard
+            key={career.company}
+            {...career}
+            delay={0.55 + index * 0.08}
           />
         ))}
       </div>

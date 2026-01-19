@@ -1,31 +1,36 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 export const LectureLink = () => {
   return (
     <section className="py-12 md:py-16">
-      <FadeIn delay={0.8}>
-        <h2 className="text-xs uppercase tracking-wider text-subtle mb-6">
-          진행 중인 강의
-        </h2>
-      </FadeIn>
-      
-      <FadeIn delay={0.85}>
+      <FadeIn delay={1.05}>
         <a
           href="https://class101.net"
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 py-3 text-base hover-surface rounded px-3 -mx-3 transition-colors duration-150"
+          className="group block p-6 rounded-xl bg-gradient-primary relative overflow-hidden"
         >
-          <span>취업·이직을 위한 커리어 설계 강의</span>
-          <ArrowUpRight 
-            size={16} 
-            className="text-subtle group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" 
-          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+          
+          <div className="relative flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+              <Sparkles className="text-white" size={24} />
+            </div>
+            
+            <div className="flex-1">
+              <p className="text-white/80 text-sm mb-1">진행 중인 강의</p>
+              <p className="text-white font-semibold text-lg">
+                취업·이직을 위한 커리어 설계 강의
+              </p>
+            </div>
+            
+            <ArrowUpRight 
+              size={24} 
+              className="text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-200" 
+            />
+          </div>
         </a>
-        <p className="text-sm text-muted-foreground mt-2 pl-3 -ml-3">
-          Class101에서 진행 중
-        </p>
       </FadeIn>
     </section>
   );

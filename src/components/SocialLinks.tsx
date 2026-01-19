@@ -1,49 +1,71 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, FileText } from "lucide-react";
 
 interface SocialLinkProps {
   name: string;
   url: string;
-  handle: string;
+  description: string;
+  icon: React.ReactNode;
 }
 
-const SocialLink = ({ name, url, handle }: SocialLinkProps) => (
+const SocialLink = ({ name, url, description, icon }: SocialLinkProps) => (
   <a
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex items-center justify-between py-4 border-b divider hover-surface px-3 -mx-3 transition-colors duration-150"
+    className="group flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
   >
-    <div>
-      <span className="font-medium">{name}</span>
-      <span className="text-sm text-subtle ml-3">{handle}</span>
+    <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+      {icon}
+    </div>
+    <div className="flex-1">
+      <span className="font-medium block">{name}</span>
+      <span className="text-sm text-muted-foreground">{description}</span>
     </div>
     <ArrowUpRight 
-      size={16} 
-      className="text-subtle group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150" 
+      size={18} 
+      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" 
     />
   </a>
 );
 
 export const SocialLinks = () => {
   const links = [
-    { name: "YouTube", url: "https://youtube.com", handle: "@username" },
-    { name: "Threads", url: "https://threads.net", handle: "@username" },
-    { name: "LinkedIn", url: "https://linkedin.com", handle: "/in/username" },
+    { 
+      name: "Email", 
+      url: "mailto:editorjin0326@gmail.com", 
+      description: "editorjin0326@gmail.com",
+      icon: <Mail size={20} />,
+    },
+    { 
+      name: "LinkedIn", 
+      url: "https://linkedin.com/in/byeongjin-jeong", 
+      description: "Professional network",
+      icon: <Linkedin size={20} />,
+    },
+    { 
+      name: "Resume", 
+      url: "#", 
+      description: "Download PDF",
+      icon: <FileText size={20} />,
+    },
   ];
 
   return (
     <section className="py-12 md:py-16">
-      <FadeIn delay={0.9}>
-        <h2 className="text-xs uppercase tracking-wider text-subtle mb-6">
-          소셜
-        </h2>
+      <FadeIn delay={1.1}>
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+            Connect
+          </span>
+          <div className="flex-1 h-px bg-border" />
+        </div>
       </FadeIn>
       
-      <div>
+      <div className="grid gap-3 md:grid-cols-3">
         {links.map((link, index) => (
-          <FadeIn key={link.name} delay={0.95 + index * 0.05}>
-            <SocialLink name={link.name} url={link.url} handle={link.handle} />
+          <FadeIn key={link.name} delay={1.15 + index * 0.05}>
+            <SocialLink {...link} />
           </FadeIn>
         ))}
       </div>
