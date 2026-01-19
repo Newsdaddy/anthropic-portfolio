@@ -7,7 +7,7 @@ interface SkillTagProps {
 
 const SkillTag = ({ label, delay }: SkillTagProps) => (
   <FadeIn delay={delay}>
-    <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-secondary text-secondary-foreground border border-border hover:border-primary/30 transition-colors">
+    <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium bg-secondary text-secondary-foreground border border-border hover:border-primary/30 active:scale-95 transition-all">
       {label}
     </span>
   </FadeIn>

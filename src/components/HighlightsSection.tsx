@@ -9,15 +9,15 @@ interface HighlightCardProps {
 
 const HighlightCard = ({ number, label, sublabel, delay }: HighlightCardProps) => (
   <FadeIn delay={delay}>
-    <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors duration-300">
-      <p className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+    <div className="p-4 sm:p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors duration-300">
+      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">
         {number}
       </p>
-      <p className="text-sm font-medium text-foreground">
+      <p className="text-xs sm:text-sm font-medium text-foreground leading-tight">
         {label}
       </p>
       {sublabel && (
-        <p className="text-xs text-muted-foreground mt-1">
+        <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
           {sublabel}
         </p>
       )}
@@ -30,7 +30,7 @@ export const HighlightsSection = () => {
     {
       number: "14+",
       label: "Years in Media & Business",
-      sublabel: "방송, 콘텐츠, B2B",
+      sublabel: "B2B 세일즈, 언론, 콘텐츠",
     },
     {
       number: "67%",
@@ -60,7 +60,7 @@ export const HighlightsSection = () => {
         </div>
       </FadeIn>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         {highlights.map((item, index) => (
           <HighlightCard
             key={item.label}

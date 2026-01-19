@@ -1,8 +1,8 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
 /* 
   Design System: Simon Seo 스타일 - 다크 모드, 하이테크 감성
@@ -93,18 +93,30 @@
 @layer base {
   * {
     @apply border-border;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
     line-height: 1.7;
     letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  /* Safe area for mobile devices */
+  @supports (padding: env(safe-area-inset-bottom)) {
+    body {
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
   }
 }
 

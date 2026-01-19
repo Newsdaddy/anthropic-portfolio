@@ -10,7 +10,7 @@ import { FadeIn } from "@/components/FadeIn";
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
-      <div className="container max-w-4xl px-6 md:px-8">
+      <div className="container max-w-4xl px-4 sm:px-6 md:px-8">
         <HeroSection />
         <HighlightsSection />
         <CareerSection />

@@ -10,16 +10,16 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({ period, role, company, highlight, delay }: ExperienceItemProps) => (
   <FadeIn delay={delay}>
-    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 py-4 border-b border-border group hover:bg-card/50 transition-colors -mx-4 px-4 rounded-lg">
-      <span className="text-xs font-medium text-muted-foreground md:w-28 shrink-0">
+    <div className="flex flex-col gap-1.5 sm:gap-2 md:flex-row md:items-center md:gap-6 py-3 sm:py-4 border-b border-border group hover:bg-card/50 transition-colors -mx-4 px-4 rounded-lg">
+      <span className="text-[10px] sm:text-xs font-medium text-muted-foreground md:w-28 shrink-0">
         {period}
       </span>
       <div className="flex-1">
-        <span className="font-medium">{role}</span>
-        <span className="text-muted-foreground mx-2">·</span>
-        <span className="text-muted-foreground">{company}</span>
+        <span className="font-medium text-sm sm:text-base">{role}</span>
+        <span className="text-muted-foreground mx-1.5 sm:mx-2">·</span>
+        <span className="text-muted-foreground text-sm sm:text-base">{company}</span>
       </div>
-      <span className="text-sm text-primary font-medium">
+      <span className="text-xs sm:text-sm text-primary font-medium">
         {highlight}
       </span>
     </div>
@@ -32,19 +32,19 @@ export const ExperienceSection = () => {
       period: "2012 — 2014",
       role: "Announcer",
       company: "Busan MBC",
-      highlight: "Daily Live Anchor",
+      highlight: "생방송 뉴스 앵커, DJ, MC",
     },
     {
       period: "2011 — 2012",
       role: "News Anchor",
       company: "Maeil Business TV",
-      highlight: "Stock Market Analysis",
+      highlight: "증시 분석, 경제 뉴스 진행",
     },
     {
       period: "2008",
       role: "Soldier",
       company: "Zaytun Division, Iraq",
-      highlight: "UN Peacekeeping",
+      highlight: "평화재건작전 투입, 한영 통역",
     },
   ];
 

@@ -1,5 +1,5 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowUpRight, Mail, Linkedin, FileText } from "lucide-react";
+import { ArrowUpRight, Mail, Linkedin, Youtube } from "lucide-react";
 
 interface SocialLinkProps {
   name: string;
@@ -13,41 +13,41 @@ const SocialLink = ({ name, url, description, icon }: SocialLinkProps) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+    className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary/50 active:scale-[0.98] transition-all duration-300"
   >
-    <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
       {icon}
     </div>
-    <div className="flex-1">
-      <span className="font-medium block">{name}</span>
-      <span className="text-sm text-muted-foreground">{description}</span>
+    <div className="flex-1 min-w-0">
+      <span className="font-medium block text-sm sm:text-base">{name}</span>
+      <span className="text-xs sm:text-sm text-muted-foreground truncate block">{description}</span>
     </div>
-    <ArrowUpRight 
-      size={18} 
-      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200" 
+    <ArrowUpRight
+      size={16}
+      className="text-muted-foreground shrink-0 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
     />
   </a>
 );
 
 export const SocialLinks = () => {
   const links = [
-    { 
-      name: "Email", 
-      url: "mailto:editorjin0326@gmail.com", 
-      description: "editorjin0326@gmail.com",
+    {
+      name: "Email",
+      url: "mailto:byeongjin.jeong05@gmail.com",
+      description: "강의·협업 제안",
       icon: <Mail size={20} />,
     },
-    { 
-      name: "LinkedIn", 
-      url: "https://linkedin.com/in/byeongjin-jeong", 
-      description: "Professional network",
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/valueforyourbiz",
+      description: "커머스 전략 솔루션 상담",
       icon: <Linkedin size={20} />,
     },
-    { 
-      name: "Resume", 
-      url: "#", 
-      description: "Download PDF",
-      icon: <FileText size={20} />,
+    {
+      name: "YouTube",
+      url: "https://youtube.com/@newsdaddy?si=MlVd-dM71ypHTvYl",
+      description: "나만의 성장 스토리",
+      icon: <Youtube size={20} />,
     },
   ];
 
@@ -62,7 +62,7 @@ export const SocialLinks = () => {
         </div>
       </FadeIn>
       
-      <div className="grid gap-3 md:grid-cols-3">
+      <div className="grid gap-2 sm:gap-3 md:grid-cols-3">
         {links.map((link, index) => (
           <FadeIn key={link.name} delay={1.15 + index * 0.05}>
             <SocialLink {...link} />
