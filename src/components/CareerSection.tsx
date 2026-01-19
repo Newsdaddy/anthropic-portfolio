@@ -12,28 +12,28 @@ interface CareerCardProps {
 
 const CareerCard = ({ number, period, role, company, location, achievements, delay }: CareerCardProps) => (
   <FadeIn delay={delay}>
-    <div className="group relative p-4 sm:p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300">
-      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 text-4xl sm:text-6xl font-bold text-muted/30 select-none">
+    <div className="group relative p-4 sm:p-6 rounded-xl bg-card border border-border hover:border-primary hover:shadow-xl hover:-translate-y-1 active:translate-y-0 active:shadow-md transition-all duration-300 cursor-default">
+      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 text-4xl sm:text-6xl font-bold text-muted/30 select-none group-hover:text-primary/20 group-hover:scale-110 transition-all duration-300">
         {number}
       </div>
 
       <div className="relative">
-        <p className="text-[10px] sm:text-xs font-medium text-primary mb-1 sm:mb-2">
+        <p className="text-[10px] sm:text-xs font-medium text-primary mb-1 sm:mb-2 group-hover:tracking-wider transition-all duration-300">
           {period}
         </p>
 
-        <h3 className="text-lg sm:text-xl font-bold mb-1 pr-8 sm:pr-12">
+        <h3 className="text-lg sm:text-xl font-bold mb-1 pr-8 sm:pr-12 group-hover:text-primary transition-colors duration-300">
           {role}
         </h3>
 
-        <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
+        <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 group-hover:text-foreground/70 transition-colors duration-300">
           {company} · {location}
         </p>
 
         <ul className="space-y-1.5 sm:space-y-2">
           {achievements.map((achievement, idx) => (
-            <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-              <span className="text-primary text-[10px] sm:text-xs shrink-0">●</span>
+            <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+              <span className="text-primary text-[10px] sm:text-xs shrink-0 group-hover:scale-125 transition-transform duration-300">●</span>
               <span className="leading-relaxed">{achievement}</span>
             </li>
           ))}
@@ -52,7 +52,7 @@ export const CareerSection = () => {
       company: "Statista GmbH",
       location: "Hamburg, Germany",
       achievements: [
-        "국내 기업 Market Intelligence 솔루션 컨설팅·계약 클로저",
+        "국내 기업 Market Intelligence 솔루션 컨설팅·계약",
         "YoY 67%+ 매출 성장 달성",
         "LG그룹, 현대차그룹 및 PwC, KPMG, Deloitte 등 컨설팅사 파트너십 계약 총괄",
       ],

@@ -4,89 +4,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Design System: Simon Seo 스타일 - 다크 모드, 하이테크 감성
-  - 다크 배경 + 주황 포인트 컬러
-  - 숫자 기반 하이라이트
-  - 현대적이고 세련된 미니멀리즘
+/*
+  Design System: Dark Theme with Spline
+  - 스플라인 3D와 어울리는 어두운 배경
+  - 고급스러운 다크 모드
+  - 높은 가독성
 */
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-
-    --primary: 24 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 10%;
-
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
-
-    --accent: 24 100% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 24 100% 50%;
-
-    --radius: 0.5rem;
-
-    /* Custom tokens */
-    --text-subtle: 0 0% 50%;
-    --text-muted: 0 0% 60%;
-    --divider: 0 0% 90%;
-    --hover-bg: 0 0% 95%;
-    --gradient-start: 24 100% 50%;
-    --gradient-end: 35 100% 55%;
-  }
-
-  .dark {
-    --background: 0 0% 7%;
+    --background: 0 0% 2%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 10%;
+    --card: 0 0% 6%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 10%;
+    --popover: 0 0% 6%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 24 100% 55%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 280 60% 65%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 24 100% 55%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 280 60% 65%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 24 100% 55%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 280 60% 65%;
 
-    --text-subtle: 0 0% 55%;
-    --text-muted: 0 0% 45%;
-    --divider: 0 0% 18%;
-    --hover-bg: 0 0% 12%;
-    --gradient-start: 24 100% 55%;
-    --gradient-end: 35 100% 60%;
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --text-subtle: 0 0% 70%;
+    --text-muted: 0 0% 55%;
+    --divider: 0 0% 15%;
+    --hover-bg: 0 0% 8%;
+    --gradient-start: 280 60% 70%;
+    --gradient-end: 320 60% 60%;
   }
 }
 
@@ -150,5 +113,20 @@
 
   .glow {
     box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
   }
 }

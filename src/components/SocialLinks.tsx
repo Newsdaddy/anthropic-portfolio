@@ -13,18 +13,18 @@ const SocialLink = ({ name, url, description, icon }: SocialLinkProps) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary/50 active:scale-[0.98] transition-all duration-300"
+    className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:shadow-md transition-all duration-300"
   >
-    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors shrink-0">
+    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shrink-0">
       {icon}
     </div>
     <div className="flex-1 min-w-0">
-      <span className="font-medium block text-sm sm:text-base">{name}</span>
-      <span className="text-xs sm:text-sm text-muted-foreground truncate block">{description}</span>
+      <span className="font-medium block text-sm sm:text-base group-hover:text-primary transition-colors duration-300">{name}</span>
+      <span className="text-xs sm:text-sm text-muted-foreground truncate block group-hover:text-foreground/70 transition-colors duration-300">{description}</span>
     </div>
     <ArrowUpRight
       size={16}
-      className="text-muted-foreground shrink-0 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
+      className="text-muted-foreground shrink-0 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-125 transition-all duration-300"
     />
   </a>
 );
@@ -46,7 +46,7 @@ export const SocialLinks = () => {
     {
       name: "YouTube",
       url: "https://youtube.com/@newsdaddy?si=MlVd-dM71ypHTvYl",
-      description: "나만의 성장 스토리",
+      description: "함께 '찐' 성장하는 노하우",
       icon: <Youtube size={20} />,
     },
   ];

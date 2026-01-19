@@ -7,7 +7,7 @@ interface SkillTagProps {
 
 const SkillTag = ({ label, delay }: SkillTagProps) => (
   <FadeIn delay={delay}>
-    <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium bg-secondary text-secondary-foreground border border-border hover:border-primary/30 active:scale-95 transition-all">
+    <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium bg-secondary text-secondary-foreground border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-md active:scale-95 transition-all duration-200 cursor-default">
       {label}
     </span>
   </FadeIn>
@@ -23,8 +23,12 @@ export const SkillsSection = () => {
     "Fact-checking",
     "Salesforce",
     "WordPress CMS",
+    "GTM",
+    "Lead generation",
+    "Negotiation",
+    "career coaching",
     "Korean (Native)",
-    "English (TOEIC 915)",
+    "English",
     "German (Telc C1)",
   ];
 

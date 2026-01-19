@@ -10,16 +10,16 @@ interface ExperienceItemProps {
 
 const ExperienceItem = ({ period, role, company, highlight, delay }: ExperienceItemProps) => (
   <FadeIn delay={delay}>
-    <div className="flex flex-col gap-1.5 sm:gap-2 md:flex-row md:items-center md:gap-6 py-3 sm:py-4 border-b border-border group hover:bg-card/50 transition-colors -mx-4 px-4 rounded-lg">
-      <span className="text-[10px] sm:text-xs font-medium text-muted-foreground md:w-28 shrink-0">
+    <div className="flex flex-col gap-1.5 sm:gap-2 md:flex-row md:items-center md:gap-6 py-3 sm:py-4 border-b border-border group hover:bg-card hover:border-primary/30 hover:shadow-sm hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 -mx-4 px-4 rounded-lg cursor-default">
+      <span className="text-[10px] sm:text-xs font-medium text-muted-foreground md:w-28 shrink-0 group-hover:text-primary transition-colors duration-300">
         {period}
       </span>
       <div className="flex-1">
-        <span className="font-medium text-sm sm:text-base">{role}</span>
+        <span className="font-medium text-sm sm:text-base group-hover:text-primary transition-colors duration-300">{role}</span>
         <span className="text-muted-foreground mx-1.5 sm:mx-2">·</span>
-        <span className="text-muted-foreground text-sm sm:text-base">{company}</span>
+        <span className="text-muted-foreground text-sm sm:text-base group-hover:text-foreground/70 transition-colors duration-300">{company}</span>
       </div>
-      <span className="text-xs sm:text-sm text-primary font-medium">
+      <span className="text-xs sm:text-sm text-primary font-medium group-hover:scale-105 group-hover:tracking-wide transition-all duration-300">
         {highlight}
       </span>
     </div>
