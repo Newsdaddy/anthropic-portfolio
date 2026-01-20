@@ -1,7 +1,45 @@
+import { useState, useRef, useCallback } from "react";
 import { FadeIn } from "./FadeIn";
+import { AdminLoginModal } from "./AdminLoginModal";
 import profileImage from "@/assets/profile.png";
 
+const CLICK_THRESHOLD = 10;
+const TIMEOUT_MS = 3000;
+
 export const HeroSection = () => {
+  const [clickCount, setClickCount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleProfileClick = useCallback(() => {
+    // Trigger scale animation
+    setIsAnimating(true);
+    setTimeout(() => setIsAnimating(false), 150);
+
+    // Clear existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
+    const newCount = clickCount + 1;
+    setClickCount(newCount);
+
+    // Check if threshold reached
+    if (newCount >= CLICK_THRESHOLD) {
+      setClickCount(0);
+      setIsModalOpen(true);
+      return;
+    }
+
+    // Set timeout to reset count after 3 seconds of inactivity
+    timeoutRef.current = setTimeout(() => {
+      setClickCount(0);
+    }, TIMEOUT_MS);
+  }, [clickCount]);
+
+  const isNearThreshold = clickCount === CLICK_THRESHOLD - 1; // 9th click
+
   return (
     <section className="pt-8 pb-6 sm:pt-12 sm:pb-8 md:pt-16 md:pb-12 relative">
       {/* Spline 3D - Dedicated Section */}
@@ -22,13 +60,29 @@ export const HeroSection = () => {
 
       <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12">
         <FadeIn>
-          <div className="relative group cursor-pointer">
-            <div className="absolute -inset-2 bg-gradient-to-r from-primary/30 via-primary/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden bg-secondary glow group-hover:scale-105 group-hover:shadow-2xl transition-all duration-300">
+          <div 
+            className="relative group cursor-pointer select-none"
+            onClick={handleProfileClick}
+          >
+            {/* Purple glow on 9th click */}
+            <div 
+              className={`absolute -inset-3 rounded-3xl blur-xl transition-all duration-500 ${
+                isNearThreshold 
+                  ? 'opacity-60 bg-purple-500/40' 
+                  : 'opacity-0 bg-gradient-to-r from-primary/30 via-primary/20 to-transparent group-hover:opacity-100'
+              }`} 
+            />
+            <div 
+              className={`relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden bg-secondary glow transition-all duration-150 ${
+                isAnimating ? 'scale-110' : 'scale-100'
+              } ${isNearThreshold ? 'ring-2 ring-purple-500/50' : ''} group-hover:shadow-2xl`}
+            >
               <img
                 src={profileImage}
                 alt="정병진 프로필"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className={`w-full h-full object-cover transition-transform duration-500 ${
+                  isAnimating ? 'scale-105' : 'group-hover:scale-110'
+                }`}
               />
             </div>
           </div>
@@ -49,6 +103,8 @@ export const HeroSection = () => {
           </FadeIn>
         </div>
       </div>
+
+      <AdminLoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };
