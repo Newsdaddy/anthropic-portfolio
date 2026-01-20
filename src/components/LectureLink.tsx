@@ -6,7 +6,7 @@ export const LectureLink = () => {
     <section className="py-12 md:py-16 space-y-3 sm:space-y-4">
       <FadeIn delay={1.05}>
         <a
-          href="https://class101.net"
+          href="https://class101.net/ko/products/6866869e1749443b50e3082e?utm_campaign=pdp_share&utm_content=share_feature&utm_medium=referral&utm_source=link_share_share&utm_term=6866869e1749443b50e3082e"
           target="_blank"
           rel="noopener noreferrer"
           className="group block p-4 sm:p-6 rounded-xl bg-gradient-primary relative overflow-hidden hover:scale-[1.02] hover:shadow-2xl active:scale-[0.98] transition-all duration-300"
