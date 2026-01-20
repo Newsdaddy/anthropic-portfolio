@@ -40,7 +40,7 @@ export const SocialLinks = () => {
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/valueforyourbiz",
-      description: "커머스 전략 솔루션 상담",
+      description: "B2B 솔루션 상담",
       icon: <Linkedin size={20} />,
     },
     {
