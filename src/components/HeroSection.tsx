@@ -44,7 +44,7 @@ export const HeroSection = () => {
 
           <FadeIn delay={0.2}>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              타인과 함께 성장하는 자유로운 경계인
+              당신과 함께 성장하는 자유로운 경계인
             </p>
           </FadeIn>
         </div>
