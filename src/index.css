@@ -22,8 +22,8 @@
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 280 60% 65%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 90% 55%;
+    --primary-foreground: 0 0% 5%;
 
     --secondary: 0 0% 10%;
     --secondary-foreground: 0 0% 90%;
@@ -31,15 +31,15 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 280 60% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 90% 55%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 280 60% 65%;
+    --ring: 45 90% 55%;
 
     --radius: 0.5rem;
 
@@ -48,8 +48,8 @@
     --text-muted: 0 0% 55%;
     --divider: 0 0% 15%;
     --hover-bg: 0 0% 8%;
-    --gradient-start: 280 60% 70%;
-    --gradient-end: 320 60% 60%;
+    --gradient-start: 45 90% 60%;
+    --gradient-end: 35 85% 50%;
   }
 }
 
@@ -108,7 +108,7 @@
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    background: linear-gradient(135deg, hsl(35 70% 25%), hsl(var(--gradient-start)));
   }
 
   .glow {
