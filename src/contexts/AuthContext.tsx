@@ -1,18 +1,20 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface AuthContextType {
   isAdmin: boolean;
-  login: (password: string) => boolean;
+  login: (password: string) => Promise<boolean>;
   logout: () => void;
+  isLoading: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const ADMIN_SESSION_KEY = 'admin_session';
-const ADMIN_PASSWORD = 'lovable_admin_2024'; // Will be checked against env in edge function
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     // Check for existing session on mount
@@ -22,14 +24,33 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  const login = (password: string): boolean => {
-    // Simple client-side check - in production, this would verify against a backend
-    if (password === ADMIN_PASSWORD) {
-      setIsAdmin(true);
-      sessionStorage.setItem(ADMIN_SESSION_KEY, 'authenticated');
-      return true;
+  const login = async (password: string): Promise<boolean> => {
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('verify-admin', {
+        body: { password }
+      });
+
+      if (error) {
+        console.error('Login error:', error);
+        setIsLoading(false);
+        return false;
+      }
+
+      if (data?.success) {
+        setIsAdmin(true);
+        sessionStorage.setItem(ADMIN_SESSION_KEY, 'authenticated');
+        setIsLoading(false);
+        return true;
+      }
+
+      setIsLoading(false);
+      return false;
+    } catch (error) {
+      console.error('Login error:', error);
+      setIsLoading(false);
+      return false;
     }
-    return false;
   };
 
   const logout = () => {
@@ -38,7 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAdmin, login, logout }}>
+    <AuthContext.Provider value={{ isAdmin, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

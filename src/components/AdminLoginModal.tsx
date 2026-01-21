@@ -23,17 +23,18 @@ export const AdminLoginModal = ({ isOpen, onClose }: AdminLoginModalProps) => {
     setError('');
     setIsLoading(true);
 
-    // Small delay for UX
-    await new Promise(resolve => setTimeout(resolve, 300));
-
-    const success = login(password);
-    
-    if (success) {
-      setPassword('');
-      onClose();
-      navigate('/admin-dashboard');
-    } else {
-      setError('잘못된 비밀번호입니다');
+    try {
+      const success = await login(password);
+      
+      if (success) {
+        setPassword('');
+        onClose();
+        navigate('/admin-dashboard');
+      } else {
+        setError('잘못된 비밀번호입니다');
+      }
+    } catch (err) {
+      setError('서버 오류가 발생했습니다');
     }
     
     setIsLoading(false);
