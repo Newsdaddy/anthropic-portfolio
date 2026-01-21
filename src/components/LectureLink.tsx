@@ -1,5 +1,5 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, BookOpen, Sparkles } from "lucide-react";
 
 export const LectureLink = () => {
   return (
@@ -53,6 +53,36 @@ export const LectureLink = () => {
               <p className="text-white/80 text-xs sm:text-sm mb-0.5 sm:mb-1 group-hover:text-white transition-colors duration-300">진행 중인 강의</p>
               <p className="text-white font-semibold text-base sm:text-lg truncate group-hover:tracking-wide transition-all duration-300">
                 Korean Lessons for Foreigners
+              </p>
+            </div>
+
+            <ArrowUpRight
+              size={20}
+              className="text-white shrink-0 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:scale-125 transition-all duration-300"
+            />
+          </div>
+        </a>
+      </FadeIn>
+
+      <FadeIn delay={1.15}>
+        <a
+          href="#"
+          className="group block p-4 sm:p-6 rounded-xl bg-gradient-primary relative overflow-hidden hover:scale-[1.02] hover:shadow-2xl active:scale-[0.98] transition-all duration-300"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300" />
+
+          <div className="relative flex items-center gap-3 sm:gap-4">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+              <BookOpen className="text-white group-hover:-rotate-6 transition-transform duration-300" size={20} />
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <p className="text-white/80 text-xs sm:text-sm mb-0.5 sm:mb-1 group-hover:text-white transition-colors duration-300">
+                판매 중인 e북
+              </p>
+              <p className="text-white font-semibold text-base sm:text-lg truncate group-hover:tracking-wide transition-all duration-300">
+                두 아이 아빠의 독일 이민 랩소디
               </p>
             </div>
 
