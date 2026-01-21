@@ -21,3 +21,6 @@ site_url = "https://newsdaddy.lovable.app"
 
 [functions.verify-admin]
 verify_jwt = false
+
+[functions.get-analytics]
+verify_jwt = false
