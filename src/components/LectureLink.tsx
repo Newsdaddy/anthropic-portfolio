@@ -79,7 +79,7 @@ export const LectureLink = () => {
 
             <div className="flex-1 min-w-0">
               <p className="text-white/80 text-xs sm:text-sm mb-0.5 sm:mb-1 group-hover:text-white transition-colors duration-300">
-                판매 중인 e북
+                소장 가능 e북
               </p>
               <p className="text-white font-semibold text-base sm:text-lg truncate group-hover:tracking-wide transition-all duration-300">
                 두 아이 아빠의 독일 이민 랩소디

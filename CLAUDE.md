@@ -29,30 +29,51 @@ npx vitest run src/test/example.test.ts
 - **3D**: @splinetool/react-spline
 - **State**: TanStack Query
 - **Routing**: React Router DOM
+- **Backend**: Supabase (Edge Functions로 관리자 인증)
 - **Testing**: Vitest + Testing Library (jsdom 환경)
 
 ## Architecture
 
-싱글 페이지 랜딩: `src/pages/Index.tsx`가 모든 섹션 컴포넌트를 조합.
-
 ```
 src/
-├── components/           # 페이지 섹션 컴포넌트
+├── components/           # 페이지 섹션 컴포넌트 (HeroSection, CareerSection 등)
 │   ├── ui/               # shadcn/ui 컴포넌트 (자동 생성, 직접 수정 지양)
 │   └── FadeIn.tsx        # Framer Motion 애니메이션 래퍼
-├── pages/Index.tsx       # 메인 랜딩 페이지 (섹션 조합)
+├── pages/
+│   ├── Index.tsx         # 메인 랜딩 페이지 (섹션 조합)
+│   └── AdminDashboard.tsx # 관리자 대시보드
+├── contexts/AuthContext.tsx  # 관리자 인증 상태 관리 (sessionStorage 기반)
+├── integrations/supabase/    # Supabase 클라이언트 (자동 생성)
 ├── hooks/use-mobile.tsx  # 모바일 감지 훅
 ├── test/setup.ts         # Vitest 설정 (matchMedia 모킹 포함)
 └── lib/utils.ts          # cn() 유틸리티 (clsx + tailwind-merge)
 ```
 
+**Provider 계층** (`src/App.tsx`):
+QueryClientProvider → AuthProvider → TooltipProvider → BrowserRouter
+
+**Routes**:
+- `/` - 메인 랜딩 페이지
+- `/admin-dashboard` - 관리자 대시보드 (인증 필요)
+
+**랜딩 페이지 섹션 순서** (`src/pages/Index.tsx`):
+HeroSection → LectureLink → HighlightsSection → CareerSection → ExperienceSection → SkillsSection → SocialLinks → Footer
+
 ## Key Patterns
 
 - **Path Alias**: `@/` → `src/`
-- **CSS Variables**: 테마 색상은 `src/index.css`의 CSS 변수로 정의 (다크 테마 기본)
+- **CSS Variables**: 테마 색상은 `src/index.css`의 CSS 변수로 정의 (다크 테마 기본, 골드 액센트 `--primary: 45 90% 55%`)
 - **Font**: Pretendard (CDN)
 - **컨테이너**: `max-w-4xl` (약 896px)
 - **Custom Utilities**: `text-gradient`, `glow`, `hover-surface` 등 (`src/index.css`)
+- **애니메이션**: `FadeIn` 컴포넌트로 섹션별 순차 fade-in 효과 (delay prop)
+
+## Environment Variables
+
+```
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_PUBLISHABLE_KEY=...
+```
 
 ## Adding shadcn/ui Components
 
