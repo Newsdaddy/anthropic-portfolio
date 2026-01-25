@@ -66,7 +66,9 @@ export const LectureLink = () => {
 
       <FadeIn delay={1.15}>
         <a
-          href="#"
+          href="https://www.latpeed.com/products/Mtj-k"
+          target="_blank"
+          rel="noopener noreferrer"
           className="group block p-4 sm:p-6 rounded-xl bg-gradient-primary relative overflow-hidden hover:scale-[1.02] hover:shadow-2xl active:scale-[0.98] transition-all duration-300"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
