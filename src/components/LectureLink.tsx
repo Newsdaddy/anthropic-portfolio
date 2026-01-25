@@ -82,7 +82,7 @@ export const LectureLink = () => {
                 소장 가능 e북
               </p>
               <p className="text-white font-semibold text-base sm:text-lg truncate group-hover:tracking-wide transition-all duration-300">
-                두 아이 아빠의 독일 이민 랩소디
+                독일에서 하루가 지나면
               </p>
             </div>
 
