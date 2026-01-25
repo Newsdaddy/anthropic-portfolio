@@ -50,7 +50,7 @@ export const HeroSection = () => {
             frameBorder="0"
             width="100%"
             height="100%"
-            style={{ border: 'none', display: 'block', background: 'transparent' }}
+            style={{ border: 'none', display: 'block', background: 'transparent', pointerEvents: 'none' }}
             title="3D Background"
             allow="fullscreen"
             allowFullScreen
