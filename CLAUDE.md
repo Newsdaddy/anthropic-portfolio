@@ -47,6 +47,9 @@ QueryClientProvider → AuthProvider → TooltipProvider → BrowserRouter
 **랜딩 페이지 섹션 순서** (`src/pages/Index.tsx`):
 HeroSection → LectureLink → HighlightsSection → CareerSection → ExperienceSection → SkillsSection → SocialLinks → Footer
 
+**관리자 인증 흐름**:
+HeroSection 프로필 이미지를 3초 내 10회 클릭 → AdminLoginModal 표시 → Supabase Edge Function `verify-admin` 호출 → 성공 시 sessionStorage에 `admin_session='authenticated'` 저장 → `/admin-dashboard`로 이동. AdminDashboard는 Edge Function `get-analytics`로 데이터 조회.
+
 **주요 코드 위치**:
 - `src/components/` — 페이지 섹션 컴포넌트
 - `src/components/ui/` — shadcn/ui 컴포넌트 (자동 생성, 직접 수정 지양)
@@ -62,6 +65,13 @@ HeroSection → LectureLink → HighlightsSection → CareerSection → Experien
 - **Custom Tailwind Utilities**: `text-gradient`, `glow`, `hover-surface` (`src/index.css`)
 - **Font**: Pretendard (CDN)
 - **Animation**: `FadeIn` 컴포넌트에 delay prop으로 섹션별 순차 등장
+
+## Configuration Notes
+
+- **TypeScript**: strict 모드 비활성화 (`noImplicitAny: false`, `strictNullChecks: false`)
+- **ESLint**: flat config 형식 (eslint 9+), `@typescript-eslint/no-unused-vars: "off"`
+- **Responsive breakpoints**: `sm` 640px, `md` 768px. 모바일 감지 hook(`use-mobile.tsx`)은 768px 기준.
+- **Spline 3D**: HeroSection에 iframe으로 임베드, `pointerEvents: 'none'`으로 클릭 차단 처리
 
 ## Environment Variables
 
