@@ -16,20 +16,20 @@ const SkillTag = ({ label, delay }: SkillTagProps) => (
 export const SkillsSection = () => {
   const skills = [
     "B2B SaaS Sales",
-    "Content Strategy",
-    "Editorial Management",
-    "Live Broadcasting",
-    "Korean Copywriting",
-    "Fact-checking",
+    "Enterprise Sales",
+    "Lead Qualification",
+    "Pipeline Management",
     "Salesforce",
-    "WordPress CMS",
-    "GTM",
-    "Lead generation",
-    "Negotiation",
-    "career coaching",
+    "HubSpot",
+    "Outbound Prospecting",
+    "Account-Based Selling",
+    "API/SaaS Products",
+    "Data Analytics",
+    "AI/ML Enthusiast",
+    "Claude API User",
     "Korean (Native)",
-    "English",
-    "German (Telc C1)",
+    "English (Fluent)",
+    "German (C1)",
   ];
 
   return (

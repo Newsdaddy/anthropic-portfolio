@@ -32,19 +32,19 @@ export const ExperienceSection = () => {
       period: "2012 — 2014",
       role: "Announcer",
       company: "Busan MBC",
-      highlight: "생방송 뉴스 앵커, DJ, MC",
+      highlight: "Live broadcast, rapid communication",
     },
     {
       period: "2011 — 2012",
-      role: "News Anchor",
+      role: "Business News Anchor",
       company: "Maeil Business TV",
-      highlight: "증시 분석, 경제 뉴스 진행",
+      highlight: "Market analysis, financial reporting",
     },
     {
       period: "2008",
-      role: "Soldier",
+      role: "Interpreter / Soldier",
       company: "Zaytun Division, Iraq",
-      highlight: "평화재건작전 투입, 한영 통역",
+      highlight: "KR↔EN interpretation under pressure",
     },
   ];
 

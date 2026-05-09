@@ -34,19 +34,19 @@ export const SocialLinks = () => {
     {
       name: "Email",
       url: "mailto:byeongjin.jeong05@gmail.com",
-      description: "강의·협업 제안",
+      description: "Let's connect",
       icon: <Mail size={20} />,
     },
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/valueforyourbiz",
-      description: "B2B 솔루션 상담",
+      description: "Full career history",
       icon: <Linkedin size={20} />,
     },
     {
       name: "YouTube",
       url: "https://youtube.com/@newsdaddy?si=MlVd-dM71ypHTvYl",
-      description: "함께 '찐' 성장하는 노하우",
+      description: "Content & communication style",
       icon: <Youtube size={20} />,
     },
   ];

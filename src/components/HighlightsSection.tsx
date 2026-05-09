@@ -28,24 +28,24 @@ const HighlightCard = ({ number, label, sublabel, delay }: HighlightCardProps) =
 export const HighlightsSection = () => {
   const highlights = [
     {
-      number: "14+",
-      label: "Years in Media·Biz",
-      sublabel: "B2B 세일즈, 언론, 콘텐츠",
+      number: "5×",
+      label: "ARR Growth",
+      sublabel: "Statista Korea (2021-2025)",
+    },
+    {
+      number: "188",
+      label: "Enterprise Contracts",
+      sublabel: "LG, Hyundai, PwC, KPMG...",
     },
     {
       number: "67%",
       label: "YoY Revenue Growth",
-      sublabel: "Statista Team Kor.",
+      sublabel: "Highest in APAC team",
     },
     {
-      number: "4,714",
-      label: "Articles Published",
-      sublabel: "BBC Science Korea",
-    },
-    {
-      number: "3",
-      label: "Languages",
-      sublabel: "KR · EN · DE",
+      number: "KR/EN",
+      label: "Bilingual Native",
+      sublabel: "+ German C1",
     },
   ];
 
