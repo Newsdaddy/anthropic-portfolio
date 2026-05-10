@@ -134,18 +134,6 @@ export const CareerSection = () => {
         "Built editorial processes from startup to profitable media outlet",
       ],
     },
-    {
-      number: "06",
-      period: "2012 — 2014",
-      role: "Announcer & Financial Broadcasting Specialist",
-      company: "Busan MBC",
-      location: "Busan, Korea",
-      achievements: [
-        "Hosted daily economy radio program with stock market briefings",
-        "Grew audience ratings 5× (0.2% → 1.0%)",
-        "Investigative journalism on regional development projects",
-      ],
-    },
   ];
 
   return (
