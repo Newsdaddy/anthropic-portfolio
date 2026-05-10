@@ -7,12 +7,27 @@ interface CareerCardProps {
   company: string;
   location: string;
   achievements: string[];
+  videoSrc?: string;
   delay: number;
 }
 
-const CareerCard = ({ number, period, role, company, location, achievements, delay }: CareerCardProps) => (
+const CareerCard = ({ number, period, role, company, location, achievements, videoSrc, delay }: CareerCardProps) => (
   <FadeIn delay={delay}>
     <div className="anthropic-card">
+      {/* Video Section */}
+      {videoSrc && (
+        <div className="relative aspect-video rounded-xl overflow-hidden bg-card-foreground/5 mb-5">
+          <video
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div>
@@ -71,6 +86,7 @@ export const CareerSection = () => {
       role: "News Anchor & Live Broadcaster",
       company: "YTN (24hr News Network)",
       location: "Seoul, Korea",
+      videoSrc: "/videos/ytn-anchor.mp4",
       achievements: [
         "Daily live news production — high-pressure, real-time communication",
         "Interviewed C-suite executives and government officials",
