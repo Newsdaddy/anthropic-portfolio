@@ -10,7 +10,7 @@ interface HighlightCardProps {
 const HighlightCard = ({ number, label, sublabel, delay }: HighlightCardProps) => (
   <FadeIn delay={delay}>
     <div className="anthropic-card group hover:scale-[1.02] transition-transform duration-300">
-      <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-card-foreground mb-2">
+      <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style={{ color: '#D4714A' }}>
         {number}
       </p>
       <p className="text-sm font-medium text-card-foreground/80 leading-tight">
