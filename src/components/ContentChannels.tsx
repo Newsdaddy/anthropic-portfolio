@@ -42,25 +42,25 @@ const ChannelCard = ({ title, description, icon, url, label, delay }: ChannelCar
 export const ContentChannels = () => {
   const channels = [
     {
-      title: "E-commerce Market Data",
-      description: "LinkedIn과 Instagram에서 유입된 B2B 리드를 위한 리소스 랜딩 페이지. 이커머스 시장 데이터와 인사이트 제공.",
+      title: "E-commerce Market Data Hub",
+      description: "Resource landing page for B2B leads from LinkedIn & Instagram. Captures qualified prospects through valuable market insights. Enables natural service exposure and lead qualification at scale.",
       icon: <Globe size={24} className="text-card-foreground/70" />,
       url: "https://ecommerce-market-data.vercel.app/resources",
-      label: "Landing Page",
+      label: "Landing Page 1",
     },
     {
       title: "Newsdaddy AI Newsletter",
-      description: "AI 활용 노하우와 비즈니스 인사이트를 공유하는 뉴스레터. 구독자에게 정기적으로 유용한 콘텐츠 전달.",
+      description: "Curated AI insights and business development content. Direct channel to push service updates and nurture leads. Builds trust through consistent value delivery before the sales conversation.",
       icon: <Mail size={24} className="text-card-foreground/70" />,
       url: "https://maily.so/newsdaddyai",
-      label: "Newsletter",
+      label: "Landing Page 2",
     },
   ];
 
   return (
     <section className="py-12 md:py-16">
-      <FadeIn delay={0.6}>
-        <p className="anthropic-label mb-6">Content & Lead Generation</p>
+      <FadeIn delay={0.65}>
+        <p className="anthropic-label mb-6">Where Leads Converge</p>
       </FadeIn>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -68,7 +68,7 @@ export const ContentChannels = () => {
           <ChannelCard
             key={channel.title}
             {...channel}
-            delay={0.65 + index * 0.08}
+            delay={0.7 + index * 0.08}
           />
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowRight, Search, Bot, BarChart3 } from "lucide-react";
+import { ArrowRight, Search, Bot, BarChart3, ArrowDown } from "lucide-react";
 
 interface VideoCardProps {
   title: string;
@@ -56,24 +56,24 @@ export const AIShowcase = () => {
   const demos = [
     {
       title: "Deep Research in Minutes",
-      description: "업무용 심층 리서치 1건에 40분 → Claude로 수 분 만에 완료. 실제 업무 효율화 사례.",
+      description: "What used to take 40 min per research task — now done in minutes with Claude. Real workflow efficiency gains.",
       icon: <Search size={20} className="text-card-foreground/70" />,
       linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_%EC%98%88%EC%A0%84%EC%97%94-%EC%97%85%EB%AC%B4%EC%9A%A9-%EB%94%A5%ED%95%9C-%EB%A6%AC%EC%84%9C%EC%B9%98-1%EA%B1%B4%EC%97%90-40%EB%B6%84-%EC%A0%95%EB%8F%84-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%A0%9C%EB%AF%B8%EB%82%98%EC%9D%B4-%EC%8B%AC%EC%B8%B5%EB%A6%AC%EC%84%9C%EC%B9%98-ugcPost-7457443494169849858-AQkw",
-      videoSrc: "/videos/research-demo.mov"
+      videoSrc: "/videos/research-demo.mov",
     },
     {
       title: "AI Agent for B2B Sales",
-      description: "B2B 세일즈 딜 전후 작업 25시간 → AI 에이전트로 자동화. 실제 워크플로우 시연.",
+      description: "25 hours of pre/post deal work per B2B sale — automated with AI agents. Live workflow demonstration.",
       icon: <Bot size={20} className="text-card-foreground/70" />,
       linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_1%EB%85%84-%EC%A0%84-%EC%A0%80%EB%8A%94-b2b-%EC%84%B8%EC%9D%BC%EC%A6%88-%EB%94%9C-%ED%95%98%EB%82%98-%EC%A0%84%ED%9B%84-%EC%9E%91%EC%97%85%EC%97%90-25%EC%8B%9C%EA%B0%84%EC%9D%84-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-ugcPost-7450065105712668672-iM6_",
       videoSrc: "/videos/agent-demo.mov",
     },
     {
       title: "DART Analysis Automation",
-      description: "기업 분석에 기업당 20-30분 → Claude로 즉시 분석. 공시 데이터 자동 처리.",
+      description: "Company analysis taking 20-30 min each — now instant with Claude. Automated public disclosure data processing.",
       icon: <BarChart3 size={20} className="text-card-foreground/70" />,
       linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_%EA%B3%BC%EA%B1%B0%EC%97%94-%EA%B8%B0%EC%97%85-%EB%B6%84%EC%84%9D%ED%95%A0-%EB%95%8C%EB%A7%88%EB%8B%A4-%EC%97%AC%EA%B8%B0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%90%EB%9D%BC-%EA%B8%B0%EC%97%85%EB%8B%B9-2030%EB%B6%84%EC%9D%84-%EC%8D%BC%EC%96%B4%EC%9A%94-ugcPost-7452111760666292224-U3gv",
-      videoSrc: "/videos/dart-demo.mov"
+      videoSrc: "/videos/dart-demo.mov",
     },
   ];
 
@@ -92,6 +92,18 @@ export const AIShowcase = () => {
           />
         ))}
       </div>
+
+      {/* Funnel Arrow */}
+      <FadeIn delay={0.6}>
+        <div className="flex flex-col items-center py-8">
+          <div className="flex items-center gap-3 text-foreground/40">
+            <div className="h-px w-16 bg-foreground/20" />
+            <ArrowDown size={24} className="animate-bounce" />
+            <div className="h-px w-16 bg-foreground/20" />
+          </div>
+          <p className="text-xs text-foreground/40 mt-3 uppercase tracking-wider">Leads flow down</p>
+        </div>
+      </FadeIn>
     </section>
   );
 };
