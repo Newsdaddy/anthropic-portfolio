@@ -27,8 +27,8 @@ export const SkillsSection = () => {
     "Data Analytics",
     "AI/ML Enthusiast",
     "Claude API User",
-    "Korean (Native)",
-    "English (Fluent)",
+    "Korean (Native, Announcer)",
+    "English (Business)",
     "German (C1)",
   ];
 

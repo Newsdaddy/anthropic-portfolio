@@ -9,18 +9,20 @@ interface HighlightCardProps {
 
 const HighlightCard = ({ number, label, sublabel, delay }: HighlightCardProps) => (
   <FadeIn delay={delay}>
-    <div className="anthropic-card group hover:scale-[1.02] transition-transform duration-300">
+    <div className="anthropic-card h-full flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
       <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style={{ color: '#D4714A' }}>
         {number}
       </p>
-      <p className="text-sm font-medium text-card-foreground/80 leading-tight">
-        {label}
-      </p>
-      {sublabel && (
-        <p className="text-xs text-card-foreground/50 mt-1">
-          {sublabel}
+      <div>
+        <p className="text-sm font-medium text-card-foreground/80 leading-tight">
+          {label}
         </p>
-      )}
+        {sublabel && (
+          <p className="text-xs text-card-foreground/50 mt-1">
+            {sublabel}
+          </p>
+        )}
+      </div>
     </div>
   </FadeIn>
 );
@@ -43,9 +45,9 @@ export const HighlightsSection = () => {
       sublabel: "Highest in APAC team",
     },
     {
-      number: "KR/EN",
-      label: "Bilingual Native",
-      sublabel: "+ German C1",
+      number: "3",
+      label: "Languages",
+      sublabel: "KR (Native) · EN · DE",
     },
   ];
 
@@ -55,7 +57,7 @@ export const HighlightsSection = () => {
         <p className="anthropic-label mb-6">Highlights</p>
       </FadeIn>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-fr">
         {highlights.map((item, index) => (
           <HighlightCard
             key={item.label}

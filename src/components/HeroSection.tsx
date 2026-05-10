@@ -65,7 +65,7 @@ export const HeroSection = () => {
 
           <FadeIn delay={0.2}>
             <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed max-w-xl">
-              B2B Sales · AI Enthusiast · Bilingual (KR/EN)
+              Applying for Business Development Representative at Anthropic
             </p>
           </FadeIn>
         </div>
