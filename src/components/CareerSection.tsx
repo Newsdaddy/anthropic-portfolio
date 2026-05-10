@@ -23,7 +23,9 @@ const CareerCard = ({ number, period, role, company, location, achievements, vid
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover rounded-xl"
+            onCanPlay={(e) => (e.target as HTMLVideoElement).play()}
           />
         </div>
       )}
@@ -69,6 +71,32 @@ export const CareerSection = () => {
   const careers = [
     {
       number: "01",
+      period: "2025 — Present",
+      role: "Lead Instructor & Founder",
+      company: "Arche Intelligence",
+      location: "Seoul, Korea",
+      achievements: [
+        "Corporate AX (AI Transformation) workshops using Claude Code for business leaders",
+        "Won 2 enterprise training contracts within first 2 months",
+        "Audience growth: Instagram +487%, LinkedIn +1,000, Newsletter 686 subscribers",
+        "Clients: KCIC, Midbar, AGC Asia Pacific",
+      ],
+    },
+    {
+      number: "02",
+      period: "2024 — Present",
+      role: "Freelance Sales Consultant",
+      company: "ECDB (E-commerce Market Intelligence)",
+      location: "Remote",
+      videoSrc: "/videos/ecdb.mp4",
+      achievements: [
+        "AI-powered lead generation: 2/year → 30/month (180× improvement) using Claude Code",
+        "Full-cycle B2B sales: lead gen → discovery → pitch → close",
+        "Leading APAC market expansion strategy",
+      ],
+    },
+    {
+      number: "03",
       period: "2021 — 2025",
       role: "Sr. Business Development Manager",
       company: "Statista GmbH",
@@ -82,7 +110,7 @@ export const CareerSection = () => {
       ],
     },
     {
-      number: "02",
+      number: "04",
       period: "2015 — 2019",
       role: "News Anchor & Live Broadcaster",
       company: "YTN (24hr News Network)",
@@ -95,7 +123,7 @@ export const CareerSection = () => {
       ],
     },
     {
-      number: "03",
+      number: "05",
       period: "2016 — 2019",
       role: "Editor-in-Chief",
       company: "BBC Science Korea",
