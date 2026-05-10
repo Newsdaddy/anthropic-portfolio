@@ -36,7 +36,7 @@ export const HeroSection = () => {
 
   return (
     <section className="pt-12 pb-8 sm:pt-16 sm:pb-12 md:pt-20 md:pb-16">
-      <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12">
+      <div className="flex flex-col md:flex-row md:items-end gap-6 sm:gap-8 md:gap-12">
         <FadeIn>
           <div
             className="relative cursor-pointer select-none"
@@ -56,15 +56,15 @@ export const HeroSection = () => {
           </div>
         </FadeIn>
 
-        <div className="flex-1">
+        <div className="flex-1 flex flex-col justify-end">
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-3">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-1">
               Byeongjin Jeong
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-foreground/70 leading-relaxed max-w-xl">
               Applying for Business Development Representative at Anthropic
             </p>
           </FadeIn>
