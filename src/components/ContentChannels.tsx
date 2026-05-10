@@ -190,6 +190,115 @@ export const ContentChannels = () => {
           <p className="text-sm text-card-foreground/60">Filtering qualified leads for high-conversion sales conversations</p>
         </div>
       </FadeIn>
+
+      {/* Slide 1: B2B Sales Flow */}
+      <div className="py-12 md:py-16">
+        <FadeIn delay={0.95}>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">B2B Sales Flow</h2>
+        </FadeIn>
+        <FadeIn delay={1.0}>
+          <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>How I Actually Develop Business</p>
+        </FadeIn>
+        <FadeIn delay={1.05}>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {[
+              { step: "01", title: "Lead Acquisition", items: ["SEO / Website inbound", "Demo request", "Reports request", "Referral from clients"] },
+              { step: "02", title: "Business Development", items: ["Discuss common topics", "Value proposition", "Demo presentation", "Q&A session"] },
+              { step: "03", title: "Negotiation & Closing", items: ["Offer pricing consultation", "Pricing guide", "Contract negotiation"] },
+              { step: "04", title: "Onboarding & Use", items: ["Onboarding training", "Regular check-in meetings", "Usage Q&A support"] },
+              { step: "05", title: "Farming & Upsell", items: ["New feature updates", "Expansion opportunities", "Referral program"] },
+            ].map((phase, idx) => (
+              <div key={phase.step} className="anthropic-card">
+                <p className="text-2xl font-bold mb-2" style={{ color: '#D4714A' }}>{phase.step}</p>
+                <p className="font-bold text-card-foreground text-sm mb-3">{phase.title}</p>
+                <ul className="space-y-1">
+                  {phase.items.map((item, i) => (
+                    <li key={i} className="text-xs text-card-foreground/60">→ {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Slide 2: Key Account Internal Mapping */}
+      <div className="py-12 md:py-16">
+        <FadeIn delay={1.1}>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Key Account Internal Mapping</h2>
+        </FadeIn>
+        <FadeIn delay={1.15}>
+          <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Map Key Accounts in Detail to Build Sales Strategy</p>
+        </FadeIn>
+        <FadeIn delay={1.2}>
+          <div className="anthropic-card overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-card-foreground/10">
+                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Client</th>
+                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Department</th>
+                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Contact</th>
+                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Notes</th>
+                </tr>
+              </thead>
+              <tbody className="text-card-foreground/70">
+                <tr className="border-b border-card-foreground/5">
+                  <td className="py-3 px-2" rowSpan={3}>Auto OEM</td>
+                  <td className="py-3 px-2">MI Planning Team</td>
+                  <td className="py-3 px-2">Han○○ Senior Manager</td>
+                  <td className="py-3 px-2">Contract since 2024, Professional Account</td>
+                </tr>
+                <tr className="border-b border-card-foreground/5">
+                  <td className="py-3 px-2">Electrification HQ</td>
+                  <td className="py-3 px-2">Lee○○ Senior Manager</td>
+                  <td className="py-3 px-2">Consumer Insights bundle</td>
+                </tr>
+                <tr className="border-b border-card-foreground/5">
+                  <td className="py-3 px-2">ICE Product Planning</td>
+                  <td className="py-3 px-2">Ko○○ Manager</td>
+                  <td className="py-3 px-2">AskStatista Light bundle</td>
+                </tr>
+              </tbody>
+            </table>
+            <p className="text-xs text-card-foreground/40 mt-4 text-center">* Statista Korea case example - multi-department enterprise penetration strategy</p>
+          </div>
+        </FadeIn>
+      </div>
+
+      {/* Slide 3: Why Anthropic Needs Byeongjin */}
+      <div className="py-12 md:py-16">
+        <FadeIn delay={1.25}>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Why Anthropic Needs Byeongjin as BDR in Korea</h2>
+        </FadeIn>
+        <FadeIn delay={1.3}>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="anthropic-card">
+              <p className="text-lg font-bold mb-3" style={{ color: '#D4714A' }}>Market</p>
+              <ul className="space-y-2 text-sm text-card-foreground/70">
+                <li>→ $900B valuation round in review</li>
+                <li>→ $30B ARR (1,400% YoY growth)</li>
+                <li>→ Claude Code run-rate $2.5B+</li>
+              </ul>
+            </div>
+            <div className="anthropic-card">
+              <p className="text-lg font-bold mb-3" style={{ color: '#D4714A' }}>Why Now</p>
+              <ul className="space-y-2 text-sm text-card-foreground/70">
+                <li>→ Korea Claude usage: Global Top 5</li>
+                <li>→ Per-capita usage exceeds US</li>
+                <li>→ Claude Code weekly active users: 6x</li>
+              </ul>
+            </div>
+            <div className="anthropic-card">
+              <p className="text-lg font-bold mb-3" style={{ color: '#D4714A' }}>Value I Bring</p>
+              <ul className="space-y-2 text-sm text-card-foreground/70">
+                <li>→ Productivity & Cost optimization</li>
+                <li>→ Time & Speed to market</li>
+                <li>→ Market Insight for Korea</li>
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
     </section>
   );
 };
