@@ -41,7 +41,7 @@ export const HighlightsSection = () => {
     },
     {
       number: "180×",
-      label: "Lead Pipeline Growth",
+      label: "Opportunity Pipeline",
       sublabel: "ECDB (2→30/month with Claude)",
     },
     {
