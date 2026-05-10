@@ -71,7 +71,7 @@ export const CareerSection = () => {
   const careers = [
     {
       number: "01",
-      period: "2025 — Present",
+      period: "Mar 2026 — Present",
       role: "Lead Instructor & Founder",
       company: "Arche Intelligence",
       location: "Seoul, Korea",
@@ -84,7 +84,7 @@ export const CareerSection = () => {
     },
     {
       number: "02",
-      period: "2024 — Present",
+      period: "Mar 2026 — Present",
       role: "Freelance Sales Consultant",
       company: "ECDB (E-commerce Market Intelligence)",
       location: "Remote",
@@ -97,7 +97,7 @@ export const CareerSection = () => {
     },
     {
       number: "03",
-      period: "2021 — 2025",
+      period: "Jun 2021 — Feb 2026",
       role: "Sr. Business Development Manager",
       company: "Statista GmbH",
       location: "Hamburg, Germany",
