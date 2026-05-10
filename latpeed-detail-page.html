@@ -1,0 +1,415 @@
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+  .lp-root {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.75;
+    letter-spacing: -0.01em;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── Hero ── */
+  .lp-hero {
+    text-align: center;
+    padding: 56px 0 40px;
+  }
+
+  .lp-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8b7355;
+    background: #f5f0e8;
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+  }
+
+  .lp-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #111;
+    margin: 0 0 12px;
+  }
+
+  .lp-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+
+  .lp-divider {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, #c4a55a, #e8d5a3);
+    border: none;
+    margin: 40px auto;
+    border-radius: 2px;
+  }
+
+  /* ── Intro ── */
+  .lp-intro {
+    padding: 0 0 8px;
+  }
+
+  .lp-intro p {
+    font-size: 15.5px;
+    color: #333;
+    margin: 0 0 16px;
+  }
+
+  .lp-intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .lp-quote {
+    position: relative;
+    margin: 32px 0;
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #faf7f0, #f5f0e6);
+    border-left: 3px solid #c4a55a;
+    border-radius: 0 12px 12px 0;
+    font-size: 15px;
+    color: #555;
+    font-style: italic;
+  }
+
+  .lp-quote::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 40px;
+    color: #c4a55a;
+    opacity: 0.3;
+    font-style: normal;
+    line-height: 1;
+  }
+
+  /* ── Section Header ── */
+  .lp-section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 48px 0 28px;
+  }
+
+  .lp-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #8b7355;
+    white-space: nowrap;
+  }
+
+  .lp-section-line {
+    flex: 1;
+    height: 1px;
+    background: #e5e0d5;
+  }
+
+  /* ── TOC ── */
+  .lp-toc {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lp-toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: #fafaf8;
+    border: 1px solid #eeebe3;
+    border-radius: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-toc-item:hover {
+    border-color: #d4c9a8;
+    box-shadow: 0 2px 12px rgba(180, 160, 100, 0.08);
+  }
+
+  .lp-toc-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #c4a55a, #d4b96a);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .lp-toc-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lp-toc-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 4px;
+  }
+
+  .lp-toc-desc {
+    font-size: 13.5px;
+    color: #888;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── Author ── */
+  .lp-author {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px;
+    background: linear-gradient(135deg, #f8f5ee, #f3efe5);
+    border-radius: 16px;
+    margin-top: 0;
+  }
+
+  .lp-author-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c4a55a, #a08040);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .lp-author-avatar svg {
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .lp-author-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .lp-author-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 6px;
+  }
+
+  .lp-author-bio {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  /* ── Details ── */
+  .lp-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 0;
+  }
+
+  .lp-detail-item {
+    padding: 16px 18px;
+    background: #fafaf8;
+    border: 1px solid #eeebe3;
+    border-radius: 10px;
+  }
+
+  .lp-detail-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #999;
+    margin: 0 0 4px;
+  }
+
+  .lp-detail-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+
+  /* ── Footer ── */
+  .lp-footer {
+    text-align: center;
+    padding: 48px 0 56px;
+  }
+
+  .lp-footer p {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 480px) {
+    .lp-root {
+      padding: 0 16px;
+    }
+    .lp-hero {
+      padding: 40px 0 32px;
+    }
+    .lp-title {
+      font-size: 26px;
+    }
+    .lp-author {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      padding: 24px 20px;
+    }
+    .lp-details {
+      grid-template-columns: 1fr;
+    }
+    .lp-toc-item {
+      padding: 16px;
+    }
+  }
+</style>
+
+<div class="lp-root">
+
+  <!-- Hero -->
+  <div class="lp-hero">
+    <span class="lp-badge">소장 가능 e북 · PDF</span>
+    <h1 class="lp-title">독일에서 하루가 지나면</h1>
+    <p class="lp-subtitle">빠르게만 살아온 당신에게 건네는, 느린 하루의 기록</p>
+  </div>
+
+  <hr class="lp-divider">
+
+  <!-- Intro -->
+  <div class="lp-intro">
+    <p>
+      한국의 치열한 교육 환경과 빠른 일상에 지친 사람들을 위해 쓴 책입니다.
+      10년간 뉴스 앵커로 일하다 2019년 가족과 함께 독일로 이주한 저자가,
+      7년간의 독일 생활을 관찰하며 기록한 이야기입니다.
+    </p>
+    <p>
+      육아서가 아닙니다. 삶의 속도, 실패, 경쟁에 대해
+      다시 생각하게 만드는 에세이이자 관찰 기록입니다.
+    </p>
+    <div class="lp-quote">
+      느린 건 뒤처지는 게 아닙니다.<br>
+      당신은 이미 충분히 잘하고 있어요.
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="lp-section-header">
+    <span class="lp-section-label">목차</span>
+    <div class="lp-section-line"></div>
+  </div>
+
+  <ul class="lp-toc">
+    <li class="lp-toc-item">
+      <div class="lp-toc-num">1</div>
+      <div class="lp-toc-content">
+        <p class="lp-toc-title">양육에서 삶의 공간을 존중하기</p>
+        <p class="lp-toc-desc">아이의 속도를 기다리는 철학, 학업 상담, 그리고 미래를 바라보는 시선</p>
+      </div>
+    </li>
+    <li class="lp-toc-item">
+      <div class="lp-toc-num">2</div>
+      <div class="lp-toc-content">
+        <p class="lp-toc-title">평범하지만 빛나는 일상</p>
+        <p class="lp-toc-desc">여행, 산책, 이웃과의 분쟁까지 — 독일의 소소한 일상 이야기</p>
+      </div>
+    </li>
+    <li class="lp-toc-item">
+      <div class="lp-toc-num">3</div>
+      <div class="lp-toc-content">
+        <p class="lp-toc-title">일상을 보호하는 정치</p>
+        <p class="lp-toc-desc">문화와 정치가 삶을 지키는 방식, 역사를 대하는 태도</p>
+      </div>
+    </li>
+    <li class="lp-toc-item">
+      <div class="lp-toc-num">4</div>
+      <div class="lp-toc-content">
+        <p class="lp-toc-title">의견 있는 미디어</p>
+        <p class="lp-toc-desc">한국 콘텐츠, 저널리즘 윤리, 공영방송의 독립성에 대하여</p>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Author -->
+  <div class="lp-section-header">
+    <span class="lp-section-label">저자</span>
+    <div class="lp-section-line"></div>
+  </div>
+
+  <div class="lp-author">
+    <div class="lp-author-avatar">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </div>
+    <div class="lp-author-info">
+      <p class="lp-author-name">정병진</p>
+      <p class="lp-author-bio">
+        14년 차 미디어·마케팅 전문가. 뉴스 앵커 출신으로 2019년 가족과 함께 독일로 이주했습니다.
+        Class101, AmazingTalker에서 강의하며, 독일에서의 느린 삶을 기록하고 있습니다.
+      </p>
+    </div>
+  </div>
+
+  <!-- Book Details -->
+  <div class="lp-section-header">
+    <span class="lp-section-label">상세 정보</span>
+    <div class="lp-section-line"></div>
+  </div>
+
+  <div class="lp-details">
+    <div class="lp-detail-item">
+      <p class="lp-detail-label">형식</p>
+      <p class="lp-detail-value">PDF 파일</p>
+    </div>
+    <div class="lp-detail-item">
+      <p class="lp-detail-label">가격</p>
+      <p class="lp-detail-value">₩3,900</p>
+    </div>
+    <div class="lp-detail-item">
+      <p class="lp-detail-label">분류</p>
+      <p class="lp-detail-value">에세이 · 관찰 기록</p>
+    </div>
+    <div class="lp-detail-item">
+      <p class="lp-detail-label">소장</p>
+      <p class="lp-detail-value">구매 후 영구 다운로드</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="lp-footer">
+    <p>© 정병진 · 독일에서 하루가 지나면</p>
+  </div>
+
+</div>

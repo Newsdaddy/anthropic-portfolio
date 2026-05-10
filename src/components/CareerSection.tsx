@@ -12,33 +12,40 @@ interface CareerCardProps {
 
 const CareerCard = ({ number, period, role, company, location, achievements, delay }: CareerCardProps) => (
   <FadeIn delay={delay}>
-    <div className="group relative p-4 sm:p-6 rounded-xl bg-card border border-border hover:border-primary hover:shadow-xl hover:-translate-y-1 active:translate-y-0 active:shadow-md transition-all duration-300 cursor-default">
-      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 text-4xl sm:text-6xl font-bold text-muted/30 select-none group-hover:text-primary/20 group-hover:scale-110 transition-all duration-300">
-        {number}
+    <div className="anthropic-card">
+      {/* Header */}
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h3 className="text-xl sm:text-2xl font-bold text-card-foreground mb-1">
+            {role}
+          </h3>
+          <p className="text-sm text-card-foreground/70">
+            {company} · {location}
+          </p>
+        </div>
+        <span className="text-4xl font-bold text-card-foreground/10">
+          {number}
+        </span>
       </div>
 
-      <div className="relative">
-        <p className="text-[10px] sm:text-xs font-medium text-primary mb-1 sm:mb-2 group-hover:tracking-wider transition-all duration-300">
-          {period}
-        </p>
+      {/* Divider */}
+      <div className="anthropic-divider my-4" />
 
-        <h3 className="text-lg sm:text-xl font-bold mb-1 pr-8 sm:pr-12 group-hover:text-primary transition-colors duration-300">
-          {role}
-        </h3>
-
-        <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4 group-hover:text-foreground/70 transition-colors duration-300">
-          {company} · {location}
-        </p>
-
-        <ul className="space-y-1.5 sm:space-y-2">
-          {achievements.map((achievement, idx) => (
-            <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
-              <span className="text-primary text-[10px] sm:text-xs shrink-0 group-hover:scale-125 transition-transform duration-300">●</span>
-              <span className="leading-relaxed">{achievement}</span>
-            </li>
-          ))}
-        </ul>
+      {/* Meta */}
+      <div className="flex items-center justify-between mb-4">
+        <span className="anthropic-label">Period</span>
+        <span className="text-sm text-card-foreground/80">{period}</span>
       </div>
+
+      {/* Achievements */}
+      <ul className="space-y-2">
+        {achievements.map((achievement, idx) => (
+          <li key={idx} className="flex items-start gap-2 text-sm text-card-foreground/70">
+            <span className="text-primary mt-1 shrink-0">→</span>
+            <span className="leading-relaxed">{achievement}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </FadeIn>
 );
@@ -87,12 +94,7 @@ export const CareerSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.5}>
-        <div className="flex items-center gap-3 mb-8">
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-            Career
-          </span>
-          <div className="flex-1 h-px bg-border" />
-        </div>
+        <p className="anthropic-label mb-6">Career</p>
       </FadeIn>
 
       <div className="grid gap-4 md:gap-6">

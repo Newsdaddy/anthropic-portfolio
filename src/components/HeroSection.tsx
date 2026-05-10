@@ -13,11 +13,9 @@ export const HeroSection = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleProfileClick = useCallback(() => {
-    // Trigger scale animation
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 150);
 
-    // Clear existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
@@ -25,48 +23,34 @@ export const HeroSection = () => {
     const newCount = clickCount + 1;
     setClickCount(newCount);
 
-    // Check if threshold reached
     if (newCount >= CLICK_THRESHOLD) {
       setClickCount(0);
       setIsModalOpen(true);
       return;
     }
 
-    // Set timeout to reset count after 3 seconds of inactivity
     timeoutRef.current = setTimeout(() => {
       setClickCount(0);
     }, TIMEOUT_MS);
   }, [clickCount]);
 
-  const isNearThreshold = clickCount === CLICK_THRESHOLD - 1; // 9th click
-
   return (
-    <section className="pt-8 pb-6 sm:pt-12 sm:pb-8 md:pt-16 md:pb-12 relative">
+    <section className="pt-12 pb-8 sm:pt-16 sm:pb-12 md:pt-20 md:pb-16">
       <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12">
         <FadeIn>
-          <div 
-            className="relative group cursor-pointer select-none"
+          <div
+            className="relative cursor-pointer select-none"
             onClick={handleProfileClick}
           >
-            {/* Purple glow on 9th click */}
-            <div 
-              className={`absolute -inset-3 rounded-3xl blur-xl transition-all duration-500 ${
-                isNearThreshold 
-                  ? 'opacity-60 bg-purple-500/40' 
-                  : 'opacity-0 bg-gradient-to-r from-primary/30 via-primary/20 to-transparent group-hover:opacity-100'
-              }`} 
-            />
-            <div 
-              className={`relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden bg-secondary glow transition-all duration-150 ${
-                isAnimating ? 'scale-110' : 'scale-100'
-              } ${isNearThreshold ? 'ring-2 ring-purple-500/50' : ''} group-hover:shadow-2xl`}
+            <div
+              className={`relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden bg-card transition-transform duration-150 ${
+                isAnimating ? "scale-105" : "scale-100"
+              }`}
             >
               <img
                 src={profileImage}
-                alt="정병진 프로필"
-                className={`w-full h-full object-cover transition-transform duration-500 ${
-                  isAnimating ? 'scale-105' : 'group-hover:scale-110'
-                }`}
+                alt="Byeongjin Jeong"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -74,14 +58,13 @@ export const HeroSection = () => {
 
         <div className="flex-1">
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl sm:text-display-sm md:text-display font-bold tracking-tight mb-3 sm:mb-4 group">
-              <span className="inline-block hover:scale-105 transition-transform duration-200 cursor-default">정병진</span>
-              <span className="text-gradient animate-pulse-slow">.</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-3">
+              Byeongjin Jeong
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl text-foreground/70 leading-relaxed max-w-xl">
               B2B Sales · AI Enthusiast · Bilingual (KR/EN)
             </p>
           </FadeIn>

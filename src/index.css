@@ -5,51 +5,53 @@
 @tailwind utilities;
 
 /*
-  Design System: Dark Theme with Spline
-  - 스플라인 3D와 어울리는 어두운 배경
-  - 고급스러운 다크 모드
-  - 높은 가독성
+  Design System: Anthropic Style
+  - Terminal black background
+  - Warm beige cards (Anthropic brand)
+  - Clean, minimal typography
 */
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 95%;
+    /* Terminal black background */
+    --background: 0 0% 4%;
+    --foreground: 30 10% 90%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
+    /* Anthropic warm beige cards */
+    --card: 30 15% 88%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 30 15% 88%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 16 53% 50%;
+    /* Anthropic coral/terracotta accent */
+    --primary: 16 60% 52%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 45 9% 66%;
-    --secondary-foreground: 0 0% 10%;
+    /* Secondary - muted beige */
+    --secondary: 30 10% 82%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 30 8% 75%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 16 53% 50%;
+    --accent: 16 60% 52%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 16 53% 50%;
+    /* Borders on cards - subtle warm gray */
+    --border: 30 8% 80%;
+    --input: 30 8% 80%;
+    --ring: 16 60% 52%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Custom tokens - Anthropic Brand Colors */
-    --text-subtle: 0 0% 70%;
-    --text-muted: 0 0% 55%;
-    --divider: 0 0% 15%;
-    --hover-bg: 0 0% 8%;
-    --gradient-start: 16 53% 55%;
-    --gradient-end: 16 45% 45%;
+    /* Custom Anthropic tokens */
+    --anthropic-cream: 30 15% 88%;
+    --anthropic-dark: 0 0% 10%;
+    --anthropic-coral: 16 60% 52%;
   }
 }
 
@@ -73,7 +75,6 @@
     overflow-x: hidden;
   }
 
-  /* Safe area for mobile devices */
   @supports (padding: env(safe-area-inset-bottom)) {
     body {
       padding-left: env(safe-area-inset-left);
@@ -83,32 +84,47 @@
   }
 }
 
+@layer components {
+  /* Anthropic-style card */
+  .anthropic-card {
+    @apply bg-card text-card-foreground rounded-2xl p-6 sm:p-8;
+    border: 1px solid hsl(30 10% 82%);
+  }
+
+  /* Anthropic-style button */
+  .anthropic-btn {
+    @apply inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium transition-all;
+    background: hsl(0 0% 10%);
+    color: hsl(0 0% 98%);
+  }
+
+  .anthropic-btn:hover {
+    background: hsl(0 0% 20%);
+  }
+
+  /* Anthropic-style label */
+  .anthropic-label {
+    @apply text-xs font-medium uppercase tracking-wider;
+    color: hsl(0 0% 40%);
+  }
+
+  /* Anthropic-style divider */
+  .anthropic-divider {
+    @apply w-full h-px;
+    background: hsl(30 8% 78%);
+  }
+}
+
 @layer utilities {
-  .text-subtle {
-    color: hsl(var(--text-subtle));
-  }
-
-  .text-muted-custom {
-    color: hsl(var(--text-muted));
-  }
-
-  .divider {
-    border-color: hsl(var(--divider));
-  }
-
-  .hover-surface:hover {
-    background-color: hsl(var(--hover-bg));
-  }
-
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    background: linear-gradient(135deg, hsl(16 60% 52%), hsl(16 50% 42%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(16 45% 30%), hsl(var(--gradient-start)));
+    background: linear-gradient(135deg, hsl(16 50% 35%), hsl(16 60% 52%));
   }
 
   .glow {

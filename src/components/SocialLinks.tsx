@@ -1,5 +1,5 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowUpRight, Mail, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Youtube } from "lucide-react";
 
 interface SocialLinkProps {
   name: string;
@@ -13,18 +13,18 @@ const SocialLink = ({ name, url, description, icon }: SocialLinkProps) => (
     href={url}
     target="_blank"
     rel="noopener noreferrer"
-    className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-card border border-border hover:border-primary hover:shadow-lg hover:-translate-y-1 active:translate-y-0 active:shadow-md transition-all duration-300"
+    className="group anthropic-card flex items-center gap-4 hover:scale-[1.02] transition-transform"
   >
-    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-secondary flex items-center justify-center text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shrink-0">
+    <div className="w-10 h-10 rounded-xl bg-card-foreground/10 flex items-center justify-center text-card-foreground/70 shrink-0">
       {icon}
     </div>
     <div className="flex-1 min-w-0">
-      <span className="font-medium block text-sm sm:text-base group-hover:text-primary transition-colors duration-300">{name}</span>
-      <span className="text-xs sm:text-sm text-muted-foreground truncate block group-hover:text-foreground/70 transition-colors duration-300">{description}</span>
+      <span className="font-medium block text-card-foreground">{name}</span>
+      <span className="text-sm text-card-foreground/60 truncate block">{description}</span>
     </div>
-    <ArrowUpRight
+    <ArrowRight
       size={16}
-      className="text-muted-foreground shrink-0 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-125 transition-all duration-300"
+      className="text-card-foreground/40 shrink-0 group-hover:translate-x-1 transition-transform"
     />
   </a>
 );
@@ -54,15 +54,10 @@ export const SocialLinks = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={1.1}>
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-            Connect
-          </span>
-          <div className="flex-1 h-px bg-border" />
-        </div>
+        <p className="anthropic-label mb-6">Connect</p>
       </FadeIn>
-      
-      <div className="grid gap-2 sm:gap-3 md:grid-cols-3">
+
+      <div className="grid gap-3 md:grid-cols-3">
         {links.map((link, index) => (
           <FadeIn key={link.name} delay={1.15 + index * 0.05}>
             <SocialLink {...link} />

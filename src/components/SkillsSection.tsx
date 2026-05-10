@@ -7,7 +7,7 @@ interface SkillTagProps {
 
 const SkillTag = ({ label, delay }: SkillTagProps) => (
   <FadeIn delay={delay}>
-    <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium bg-secondary text-secondary-foreground border border-border hover:border-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-md active:scale-95 transition-all duration-200 cursor-default">
+    <span className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-card text-card-foreground border border-card-foreground/10 hover:bg-card-foreground/10 transition-colors cursor-default">
       {label}
     </span>
   </FadeIn>
@@ -35,12 +35,7 @@ export const SkillsSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.95}>
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-            Skills & Languages
-          </span>
-          <div className="flex-1 h-px bg-border" />
-        </div>
+        <p className="anthropic-label mb-6">Skills & Languages</p>
       </FadeIn>
 
       <div className="flex flex-wrap gap-2">

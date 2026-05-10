@@ -20,8 +20,8 @@ const Index = () => {
         <SocialLinks />
         
         <FadeIn delay={1.3}>
-          <footer className="py-12 md:py-16 text-center border-t border-border">
-            <p className="text-xs text-muted-foreground">
+          <footer className="py-12 md:py-16 text-center">
+            <p className="text-xs text-foreground/40">
               © 2025 Byeongjin Jeong · Built with Claude Code
             </p>
           </footer>

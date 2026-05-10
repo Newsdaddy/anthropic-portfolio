@@ -9,15 +9,15 @@ interface HighlightCardProps {
 
 const HighlightCard = ({ number, label, sublabel, delay }: HighlightCardProps) => (
   <FadeIn delay={delay}>
-    <div className="group p-4 sm:p-6 rounded-xl bg-card border border-border hover:border-primary hover:bg-primary/5 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-300 cursor-default">
-      <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300 origin-left">
+    <div className="anthropic-card group hover:scale-[1.02] transition-transform duration-300">
+      <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-card-foreground mb-2">
         {number}
       </p>
-      <p className="text-xs sm:text-sm font-medium text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
+      <p className="text-sm font-medium text-card-foreground/80 leading-tight">
         {label}
       </p>
       {sublabel && (
-        <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 group-hover:text-foreground/70 transition-colors duration-300">
+        <p className="text-xs text-card-foreground/50 mt-1">
           {sublabel}
         </p>
       )}
@@ -52,12 +52,7 @@ export const HighlightsSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.3}>
-        <div className="flex items-center gap-3 mb-8">
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-            Highlights
-          </span>
-          <div className="flex-1 h-px bg-border" />
-        </div>
+        <p className="anthropic-label mb-6">Highlights</p>
       </FadeIn>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
