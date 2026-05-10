@@ -191,110 +191,215 @@ export const ContentChannels = () => {
         </div>
       </FadeIn>
 
-      {/* Slide 1: B2B Sales Flow */}
+      {/* Slide 1: B2B Sales Flow - PPT Style */}
       <div className="py-12 md:py-16">
         <FadeIn delay={0.95}>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">B2B Sales Flow</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">B2B Sales Flow</h2>
         </FadeIn>
         <FadeIn delay={1.0}>
-          <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>How I Actually Develop Business</p>
-        </FadeIn>
-        <FadeIn delay={1.05}>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          {/* Flow Header - Arrow Steps */}
+          <div className="flex items-center mb-6 overflow-x-auto pb-2">
+            <span className="px-4 py-2 rounded-full bg-gray-500 text-white text-xs font-bold shrink-0">Flows</span>
+            <div className="flex flex-1 ml-2">
+              {["Lead Acquisition", "Business Development", "Negotiation & Closing", "Onboarding & Use", "Farming & Upsell"].map((step, idx) => (
+                <div key={step} className="flex items-center shrink-0">
+                  <div
+                    className="px-4 py-2 text-xs font-bold text-white relative"
+                    style={{
+                      backgroundColor: idx === 4 ? '#1a1a1a' : '#4a4a4a',
+                      clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 12px 50%)',
+                      marginLeft: idx === 0 ? '0' : '-8px',
+                      paddingLeft: idx === 0 ? '16px' : '20px',
+                    }}
+                  >
+                    {step}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Two Rows: Clients & Byeongjin */}
+          <div className="grid grid-cols-5 gap-2 mb-2">
+            <div className="flex items-center"><span className="text-sm font-bold" style={{ color: '#D4714A' }}>Clients</span></div>
             {[
-              { step: "01", title: "Lead Acquisition", items: ["SEO / Website inbound", "Demo request", "Reports request", "Referral from clients"] },
-              { step: "02", title: "Business Development", items: ["Discuss common topics", "Value proposition", "Demo presentation", "Q&A session"] },
-              { step: "03", title: "Negotiation & Closing", items: ["Offer pricing consultation", "Pricing guide", "Contract negotiation"] },
-              { step: "04", title: "Onboarding & Use", items: ["Onboarding training", "Regular check-in meetings", "Usage Q&A support"] },
-              { step: "05", title: "Farming & Upsell", items: ["New feature updates", "Expansion opportunities", "Referral program"] },
-            ].map((phase, idx) => (
-              <div key={phase.step} className="anthropic-card">
-                <p className="text-2xl font-bold mb-2" style={{ color: '#D4714A' }}>{phase.step}</p>
-                <p className="font-bold text-card-foreground text-sm mb-3">{phase.title}</p>
+              ["Referral from existing clients", "SEO / website inbound", "Demo request", "Reports request"],
+              ["Introduce solution to stakeholders", "Meeting with key stakeholders", "Discuss common topics (idioms)", "Value proposition", "Demo presentation", "Q&A session"],
+              ["Internal shortlist selection", "Executive report", "Pricing negotiation", "Contract terms", "Contract signing", "Offer pricing consultation"],
+              ["Payment processing", "Internal admin setup", "Onboarding training", "Regular check-in meetings", "Usage Q&A support", "New feature info updates"],
+              ["Renewal negotiation", "Add-on product proposal", "New feature updates", "Pricing guide", "Discuss common topics (idioms)"],
+            ].map((items, idx) => (
+              <div key={idx} className="p-3 rounded-lg text-white text-xs" style={{ backgroundColor: '#C9735B' }}>
                 <ul className="space-y-1">
-                  {phase.items.map((item, i) => (
-                    <li key={i} className="text-xs text-card-foreground/60">→ {item}</li>
+                  {items.slice(0, 4).map((item, i) => (
+                    <li key={i}>• {item}</li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-5 gap-2">
+            <div className="flex items-center"><span className="text-sm font-bold" style={{ color: '#D4714A' }}>Byeongjin</span></div>
+            {[
+              ["TAM-SAM-SOM analysis & ICP definition", "LinkedIn lead generation", "SalesNavigator cold outreach", "AX based on Claude Code B2B seminar, workshops conduct by me", "Various Joint webinar / seminar"],
+              [],
+              [],
+              [],
+              [],
+            ].map((items, idx) => (
+              <div key={idx} className={`p-3 rounded-lg text-xs ${items.length > 0 ? 'text-card-foreground bg-card border border-card-foreground/10' : ''}`}>
+                {items.length > 0 && (
+                  <ul className="space-y-1">
+                    {items.map((item, i) => (
+                      <li key={i}>• {item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
         </FadeIn>
       </div>
 
-      {/* Slide 2: Key Account Internal Mapping */}
+      {/* Slide 2: Key Account Internal Mapping - PPT Style */}
       <div className="py-12 md:py-16">
         <FadeIn delay={1.1}>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Key Account Internal Mapping</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Key Account Internal Mapping</h2>
         </FadeIn>
         <FadeIn delay={1.15}>
-          <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Map Key Accounts in Detail to Build Sales Strategy</p>
-        </FadeIn>
-        <FadeIn delay={1.2}>
-          <div className="anthropic-card overflow-x-auto">
+          <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-card-foreground/10">
-                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Client</th>
-                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Department</th>
-                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Contact</th>
-                  <th className="text-left py-3 px-2 font-bold text-card-foreground">Notes</th>
+                <tr style={{ backgroundColor: '#C9735B' }}>
+                  <th className="text-left py-3 px-4 font-bold text-white">Client</th>
+                  <th className="text-left py-3 px-4 font-bold text-white">Department</th>
+                  <th className="text-left py-3 px-4 font-bold text-white">Person of Contact</th>
+                  <th className="text-left py-3 px-4 font-bold text-white">Notes</th>
                 </tr>
               </thead>
-              <tbody className="text-card-foreground/70">
-                <tr className="border-b border-card-foreground/5">
-                  <td className="py-3 px-2" rowSpan={3}>Auto OEM</td>
-                  <td className="py-3 px-2">MI Planning Team</td>
-                  <td className="py-3 px-2">Han○○ Senior Manager</td>
-                  <td className="py-3 px-2">Contract since 2024, Professional Account</td>
+              <tbody className="text-card-foreground/80 bg-card">
+                <tr className="border-b border-card-foreground/10">
+                  <td className="py-4 px-4 font-medium" rowSpan={4}>Auto OEM</td>
+                  <td className="py-4 px-4">Product Division<br/>Market Intelligence Planning<br/>MI Planning Team</td>
+                  <td className="py-4 px-4">Han○○ Senior Manager<br/>Lee○○ Senior Manager / MI Planning Team</td>
+                  <td className="py-4 px-4">Contract since 2024<br/>Professional Account<br/>Consumer Insights (bundle)<br/>AskStatista Light (bundle)</td>
                 </tr>
-                <tr className="border-b border-card-foreground/5">
-                  <td className="py-3 px-2">Electrification HQ</td>
-                  <td className="py-3 px-2">Lee○○ Senior Manager</td>
-                  <td className="py-3 px-2">Consumer Insights bundle</td>
+                <tr className="border-b border-card-foreground/10">
+                  <td className="py-4 px-4">Electrification Business Dev. HQ<br/>Four-Wheel Strategy Division<br/>ICE Business Unit / ICE Product Planning</td>
+                  <td className="py-4 px-4">Sagong ○○ Senior Manager / ICE Product Planning<br/>Ko○○ Manager</td>
+                  <td className="py-4 px-4">Contract since 2023<br/>Consumer Insights<br/>AskStatista (upsell)</td>
                 </tr>
-                <tr className="border-b border-card-foreground/5">
-                  <td className="py-3 px-2">ICE Product Planning</td>
-                  <td className="py-3 px-2">Ko○○ Manager</td>
-                  <td className="py-3 px-2">AskStatista Light bundle</td>
+                <tr className="border-b border-card-foreground/10">
+                  <td className="py-4 px-4">Electrification Business Dev. HQ<br/>Four-Wheel Strategy Division<br/>Business Strategy / Market Intelligence</td>
+                  <td className="py-4 px-4">Ma○○ Senior Manager<br/>Ji○○ Senior Manager</td>
+                  <td className="py-4 px-4">Contract since 2023<br/>Professional Account<br/>Consumer Insights (bundle)<br/>AskStatista (upsell)</td>
+                </tr>
+                <tr className="border-b border-card-foreground/10">
+                  <td className="py-4 px-4">Electrification Business HQ / BEV Dev. Center<br/>Software Dev. Center / SW Dept.<br/>India Mobility Dev. HQ / Data Solutions</td>
+                  <td className="py-4 px-4">Lee○○ Senior Manager<br/>Yoo○○ Senior Manager</td>
+                  <td className="py-4 px-4">Contract since 2022<br/>Consumer Insights<br/>Company Insights<br/>AskStatista (upsell)</td>
                 </tr>
               </tbody>
             </table>
-            <p className="text-xs text-card-foreground/40 mt-4 text-center">* Statista Korea case example - multi-department enterprise penetration strategy</p>
           </div>
         </FadeIn>
       </div>
 
-      {/* Slide 3: Why Anthropic Needs Byeongjin */}
+      {/* Slide 3: Why Anthropic Needs Byeongjin - PPT Style */}
       <div className="py-12 md:py-16">
-        <FadeIn delay={1.25}>
+        <FadeIn delay={1.2}>
           <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Why Anthropic Needs Byeongjin as BDR in Korea</h2>
         </FadeIn>
-        <FadeIn delay={1.3}>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="anthropic-card">
-              <p className="text-lg font-bold mb-3" style={{ color: '#D4714A' }}>Market</p>
-              <ul className="space-y-2 text-sm text-card-foreground/70">
-                <li>→ $900B valuation round in review</li>
-                <li>→ $30B ARR (1,400% YoY growth)</li>
-                <li>→ Claude Code run-rate $2.5B+</li>
-              </ul>
+        <FadeIn delay={1.25}>
+          <div className="space-y-0 overflow-x-auto">
+            {/* Market Row */}
+            <div className="flex">
+              <div className="w-24 shrink-0 bg-black text-white py-3 px-4 font-bold text-sm flex items-center">Market</div>
+              <div className="flex-1 bg-white py-3 px-4 text-sm text-card-foreground border-b border-card-foreground/10">
+                $900B valuation round in review (surpassing OpenAI's $852B) | $30B ARR (1,400% YoY growth) | Claude Code run-rate $2.5B+
+              </div>
             </div>
-            <div className="anthropic-card">
-              <p className="text-lg font-bold mb-3" style={{ color: '#D4714A' }}>Why Now</p>
-              <ul className="space-y-2 text-sm text-card-foreground/70">
-                <li>→ Korea Claude usage: Global Top 5</li>
-                <li>→ Per-capita usage exceeds US</li>
-                <li>→ Claude Code weekly active users: 6x</li>
-              </ul>
+            {/* Why Now Row */}
+            <div className="flex">
+              <div className="w-24 shrink-0 bg-black text-white py-3 px-4 font-bold text-sm flex items-center">Why Now</div>
+              <div className="flex-1 bg-white py-3 px-4 text-sm text-card-foreground border-b border-card-foreground/10">
+                Korea Claude usage: Global Top 5 | Per-capita usage exceeds US | Claude Code weekly active users: 6x growth in 4 months
+              </div>
             </div>
-            <div className="anthropic-card">
-              <p className="text-lg font-bold mb-3" style={{ color: '#D4714A' }}>Value I Bring</p>
-              <ul className="space-y-2 text-sm text-card-foreground/70">
-                <li>→ Productivity & Cost optimization</li>
-                <li>→ Time & Speed to market</li>
-                <li>→ Market Insight for Korea</li>
-              </ul>
+            {/* Challenge Row */}
+            <div className="flex">
+              <div className="w-24 shrink-0 bg-gray-200 text-card-foreground py-3 px-4 font-bold text-sm flex items-center">Challenge</div>
+              <div className="flex-1 grid grid-cols-3 gap-0">
+                <div className="bg-gray-100 p-4 border-r border-card-foreground/10">
+                  <p className="font-bold text-sm mb-2" style={{ color: '#C9735B' }}>💰 Productivity & Cost</p>
+                  <ul className="text-xs text-card-foreground/70 space-y-1">
+                    <li>• 16-hour timezone gap (KR-SF)</li>
+                    <li>• Deal cycle extended 2-3x</li>
+                    <li>• English-only support limits reach</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-100 p-4 border-r border-card-foreground/10">
+                  <p className="font-bold text-sm mb-2" style={{ color: '#C9735B' }}>⏱️ Time & Speed</p>
+                  <ul className="text-xs text-card-foreground/70 space-y-1">
+                    <li>• No local references or case studies</li>
+                    <li>• Cold outreach success rate: 1-2%</li>
+                    <li>• Korean enterprise approval lines unknown</li>
+                  </ul>
+                </div>
+                <div className="bg-gray-100 p-4">
+                  <p className="font-bold text-sm mb-2" style={{ color: '#C9735B' }}>🔍 Market Insight</p>
+                  <ul className="text-xs text-card-foreground/70 space-y-1">
+                    <li>• OpenAI: Seoul office, Samsung/SK deals</li>
+                    <li>• Google: Gemini on 800M Galaxy devices</li>
+                    <li>• 12-18 month late-mover disadvantage</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {/* Solution Row */}
+            <div className="flex">
+              <div className="w-24 shrink-0 bg-gray-200 text-card-foreground py-3 px-4 font-bold text-sm flex items-center">Solution</div>
+              <div className="flex-1 grid grid-cols-3 gap-0">
+                <div className="p-4 border-r border-white/20 text-white" style={{ backgroundColor: '#C9735B' }}>
+                  <p className="font-bold text-sm mb-2">in LinkedIn Influencer</p>
+                  <ul className="text-xs space-y-1">
+                    <li>• Claude use-case in daily works content (3x/week)</li>
+                    <li>• 10K+ LinkedIn, Instagram followers, 693 Newsletter subscribers driving inbound leads</li>
+                  </ul>
+                </div>
+                <div className="p-4 border-r border-white/20 text-white" style={{ backgroundColor: '#C9735B' }}>
+                  <p className="font-bold text-sm mb-2">🚀 AX Training & Ecosystem Builder</p>
+                  <ul className="text-xs space-y-1">
+                    <li>• Setup to custom business workflows with Claude Code</li>
+                    <li>• Hands-on training sessions with Claude Code</li>
+                  </ul>
+                </div>
+                <div className="p-4 text-white" style={{ backgroundColor: '#C9735B' }}>
+                  <p className="font-bold text-sm mb-2">📊 Seasoned Business Developer</p>
+                  <ul className="text-xs space-y-1">
+                    <li>• Fluent in Value Selling, Challenger Sale, SPICED framework</li>
+                    <li>• AI learners network acquisition</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {/* Value Row */}
+            <div className="flex">
+              <div className="w-24 shrink-0 bg-gray-200 text-card-foreground py-3 px-4 font-bold text-sm flex items-center">Value</div>
+              <div className="flex-1 grid grid-cols-3 gap-0">
+                <div className="bg-white p-4 border-r border-card-foreground/10">
+                  <p className="text-sm text-card-foreground">✓ <strong>'Customers come to you' sales model</strong></p>
+                </div>
+                <div className="bg-white p-4 border-r border-card-foreground/10">
+                  <p className="text-sm text-card-foreground">✓ <strong>Every trainee = Claude Code customer</strong></p>
+                  <p className="text-sm text-card-foreground">✓ Real-time competitive monitoring</p>
+                </div>
+                <div className="bg-white p-4">
+                  <p className="text-sm text-card-foreground">✓ <strong>Penetrating B2B Solution to each domains business planning & AX planning in Korea</strong></p>
+                  <p className="text-sm text-card-foreground">✓ Create Korea success stories</p>
+                </div>
+              </div>
             </div>
           </div>
         </FadeIn>
