@@ -266,7 +266,7 @@ export const ContentChannels = () => {
       {/* Slide 2: Key Account Internal Mapping - PPT Style */}
       <div className="py-12 md:py-16">
         <FadeIn delay={1.1}>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Key Account Internal Mapping</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">Key Account Internal Mapping - Real Example</h2>
         </FadeIn>
         <FadeIn delay={1.15}>
           <div className="overflow-x-auto">
