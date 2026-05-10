@@ -9,12 +9,12 @@ interface HighlightCardProps {
 
 const HighlightCard = ({ number, label, sublabel, delay }: HighlightCardProps) => (
   <FadeIn delay={delay}>
-    <div className="anthropic-card h-full flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
-      <p className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2" style={{ color: '#D4714A' }}>
+    <div className="anthropic-card h-full flex flex-col hover:scale-[1.02] transition-transform duration-300">
+      <p className="text-3xl sm:text-4xl md:text-5xl font-bold h-[60px] flex items-end" style={{ color: '#D4714A' }}>
         {number}
       </p>
-      <div>
-        <p className="text-sm font-medium text-card-foreground/80 leading-tight">
+      <div className="mt-3">
+        <p className="text-sm font-medium text-card-foreground/80 leading-tight h-[40px] flex items-start">
           {label}
         </p>
         {sublabel && (
@@ -40,9 +40,9 @@ export const HighlightsSection = () => {
       sublabel: "LG, Hyundai, PwC, KPMG...",
     },
     {
-      number: "67%",
-      label: "YoY Revenue Growth",
-      sublabel: "Highest in APAC team",
+      number: "180×",
+      label: "Lead Pipeline Growth",
+      sublabel: "ECDB (2→30/month with Claude)",
     },
     {
       number: "3",
