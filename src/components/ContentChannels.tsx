@@ -194,7 +194,7 @@ export const ContentChannels = () => {
       {/* Slide 1: B2B Sales Flow - PPT Style */}
       <div className="py-12 md:py-16">
         <FadeIn delay={0.95}>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">B2B Sales Flow</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-6">How I Actually Develop Business with the Leads Collected</h2>
         </FadeIn>
         <FadeIn delay={1.0}>
           {/* Flow Header - Arrow Steps */}
