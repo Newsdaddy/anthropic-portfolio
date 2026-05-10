@@ -1,10 +1,74 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Search, Bot, BarChart3 } from "lucide-react";
+
+interface VideoCardProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  linkedinUrl: string;
+  delay: number;
+}
+
+const VideoCard = ({ title, description, icon, linkedinUrl, delay }: VideoCardProps) => (
+  <FadeIn delay={delay}>
+    <div className="anthropic-card h-full flex flex-col">
+      {/* Video Thumbnail Area */}
+      <a
+        href={linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative aspect-video rounded-xl overflow-hidden bg-card-foreground/10 mb-4 group cursor-pointer"
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-card-foreground/80 flex items-center justify-center group-hover:scale-110 group-hover:bg-card-foreground transition-all duration-300">
+            <Play size={28} className="text-card fill-card ml-1" />
+          </div>
+        </div>
+        <div className="absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-card/90 flex items-center justify-center">
+          {icon}
+        </div>
+      </a>
+
+      {/* Content */}
+      <div className="flex-1">
+        <h3 className="font-bold text-card-foreground mb-2">{title}</h3>
+        <p className="text-sm text-card-foreground/60 leading-relaxed">{description}</p>
+      </div>
+
+      {/* CTA */}
+      <a
+        href={linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-card-foreground/80 hover:text-card-foreground transition-colors"
+      >
+        Watch on LinkedIn <ArrowRight size={14} />
+      </a>
+    </div>
+  </FadeIn>
+);
 
 export const AIShowcase = () => {
-  // TODO: Replace with actual video URL and post link
-  const videoUrl = ""; // YouTube embed URL or direct video URL
-  const postLink = ""; // Link to the actual post
+  const demos = [
+    {
+      title: "Deep Research in Minutes",
+      description: "업무용 심층 리서치 1건에 40분 → Claude로 수 분 만에 완료. 실제 업무 효율화 사례.",
+      icon: <Search size={20} className="text-card-foreground/70" />,
+      linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_%EC%98%88%EC%A0%84%EC%97%94-%EC%97%85%EB%AC%B4%EC%9A%A9-%EB%94%A5%ED%95%9C-%EB%A6%AC%EC%84%9C%EC%B9%98-1%EA%B1%B4%EC%97%90-40%EB%B6%84-%EC%A0%95%EB%8F%84-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%A0%9C%EB%AF%B8%EB%82%98%EC%9D%B4-%EC%8B%AC%EC%B8%B5%EB%A6%AC%EC%84%9C%EC%B9%98-ugcPost-7457443494169849858-AQkw",
+    },
+    {
+      title: "AI Agent for B2B Sales",
+      description: "B2B 세일즈 딜 전후 작업 25시간 → AI 에이전트로 자동화. 실제 워크플로우 시연.",
+      icon: <Bot size={20} className="text-card-foreground/70" />,
+      linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_1%EB%85%84-%EC%A0%84-%EC%A0%80%EB%8A%94-b2b-%EC%84%B8%EC%9D%BC%EC%A6%88-%EB%94%9C-%ED%95%98%EB%82%98-%EC%A0%84%ED%9B%84-%EC%9E%91%EC%97%85%EC%97%90-25%EC%8B%9C%EA%B0%84%EC%9D%84-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-ugcPost-7450065105712668672-iM6_",
+    },
+    {
+      title: "DART Analysis Automation",
+      description: "기업 분석에 기업당 20-30분 → Claude로 즉시 분석. 공시 데이터 자동 처리.",
+      icon: <BarChart3 size={20} className="text-card-foreground/70" />,
+      linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_%EA%B3%BC%EA%B1%B0%EC%97%94-%EA%B8%B0%EC%97%85-%EB%B6%84%EC%84%9D%ED%95%A0-%EB%95%8C%EB%A7%88%EB%8B%A4-%EC%97%AC%EA%B8%B0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%90%EB%9D%BC-%EA%B8%B0%EC%97%85%EB%8B%B9-2030%EB%B6%84%EC%9D%84-%EC%8D%BC%EC%96%B4%EC%9A%94-ugcPost-7452111760666292224-U3gv",
+    },
+  ];
 
   return (
     <section className="py-12 md:py-16">
@@ -12,54 +76,15 @@ export const AIShowcase = () => {
         <p className="anthropic-label mb-6">How I Use Claude Code for Business Development</p>
       </FadeIn>
 
-      <FadeIn delay={0.3}>
-        <div className="anthropic-card">
-          {/* Video Section */}
-          <div className="relative aspect-video rounded-xl overflow-hidden bg-card-foreground/10 mb-6">
-            {videoUrl ? (
-              <iframe
-                src={videoUrl}
-                className="absolute inset-0 w-full h-full"
-                allow="autoplay; loop; muted; encrypted-media"
-                allowFullScreen
-                title="Claude Code Demo"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <Play size={48} className="text-card-foreground/30 mx-auto mb-2" />
-                  <p className="text-sm text-card-foreground/50">Video coming soon</p>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Description */}
-          <p className="text-sm text-card-foreground/70 leading-relaxed mb-5">
-            I use Claude Code daily for sales workflows — from building MCP servers for job search automation
-            to creating this portfolio. Here's a real demo of how I leverage AI for business development.
-          </p>
-
-          {/* CTA */}
-          {postLink ? (
-            <a
-              href={postLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="anthropic-btn"
-            >
-              View original post <ArrowRight size={16} />
-            </a>
-          ) : (
-            <a
-              href="mailto:byeongjin.jeong05@gmail.com"
-              className="anthropic-btn"
-            >
-              Let's talk <ArrowRight size={16} />
-            </a>
-          )}
-        </div>
-      </FadeIn>
+      <div className="grid gap-4 md:grid-cols-3">
+        {demos.map((demo, index) => (
+          <VideoCard
+            key={demo.title}
+            {...demo}
+            delay={0.3 + index * 0.08}
+          />
+        ))}
+      </div>
     </section>
   );
 };
