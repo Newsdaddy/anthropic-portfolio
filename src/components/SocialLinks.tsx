@@ -1,5 +1,5 @@
 import { FadeIn } from "./FadeIn";
-import { ArrowRight, Mail, Linkedin, Youtube } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Newspaper } from "lucide-react";
 
 interface SocialLinkProps {
   name: string;
@@ -34,7 +34,7 @@ export const SocialLinks = () => {
     {
       name: "Email",
       url: "mailto:byeongjin.jeong05@gmail.com",
-      description: "Let's connect",
+      description: "Schedule next steps",
       icon: <Mail size={20} />,
     },
     {
@@ -44,10 +44,10 @@ export const SocialLinks = () => {
       icon: <Linkedin size={20} />,
     },
     {
-      name: "YouTube",
-      url: "https://youtube.com/@newsdaddy?si=MlVd-dM71ypHTvYl",
-      description: "Content & communication style",
-      icon: <Youtube size={20} />,
+      name: "Newsletter",
+      url: "https://maily.so/newsdaddyai",
+      description: "AI insights & business content",
+      icon: <Newspaper size={20} />,
     },
   ];
 

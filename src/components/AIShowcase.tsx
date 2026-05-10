@@ -22,7 +22,9 @@ const VideoCard = ({ title, description, icon, linkedinUrl, videoSrc, delay }: V
             loop
             muted
             playsInline
+            preload="auto"
             className="w-full h-full object-cover"
+            onCanPlay={(e) => (e.target as HTMLVideoElement).play()}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-card-foreground/10">
@@ -59,21 +61,21 @@ export const AIShowcase = () => {
       description: "What used to take 40 min per research task — now done in minutes with Claude. Real workflow efficiency gains.",
       icon: <Search size={20} className="text-card-foreground/70" />,
       linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_%EC%98%88%EC%A0%84%EC%97%94-%EC%97%85%EB%AC%B4%EC%9A%A9-%EB%94%A5%ED%95%9C-%EB%A6%AC%EC%84%9C%EC%B9%98-1%EA%B1%B4%EC%97%90-40%EB%B6%84-%EC%A0%95%EB%8F%84-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%A0%9C%EB%AF%B8%EB%82%98%EC%9D%B4-%EC%8B%AC%EC%B8%B5%EB%A6%AC%EC%84%9C%EC%B9%98-ugcPost-7457443494169849858-AQkw",
-      videoSrc: "/videos/research-demo.mov",
+      videoSrc: "/videos/research-demo.mp4",
     },
     {
       title: "AI Agent for B2B Sales",
       description: "25 hours of pre/post deal work per B2B sale — automated with AI agents. Live workflow demonstration.",
       icon: <Bot size={20} className="text-card-foreground/70" />,
       linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_1%EB%85%84-%EC%A0%84-%EC%A0%80%EB%8A%94-b2b-%EC%84%B8%EC%9D%BC%EC%A6%88-%EB%94%9C-%ED%95%98%EB%82%98-%EC%A0%84%ED%9B%84-%EC%9E%91%EC%97%85%EC%97%90-25%EC%8B%9C%EA%B0%84%EC%9D%84-%EC%8D%BC%EC%8A%B5%EB%8B%88%EB%8B%A4-ugcPost-7450065105712668672-iM6_",
-      videoSrc: "/videos/agent-demo.mov",
+      videoSrc: "/videos/agent-demo.mp4",
     },
     {
       title: "DART Analysis Automation",
       description: "Company analysis taking 20-30 min each — now instant with Claude. Automated public disclosure data processing.",
       icon: <BarChart3 size={20} className="text-card-foreground/70" />,
       linkedinUrl: "https://www.linkedin.com/posts/valueforyourbiz_%EA%B3%BC%EA%B1%B0%EC%97%94-%EA%B8%B0%EC%97%85-%EB%B6%84%EC%84%9D%ED%95%A0-%EB%95%8C%EB%A7%88%EB%8B%A4-%EC%97%AC%EA%B8%B0-%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%90%EB%9D%BC-%EA%B8%B0%EC%97%85%EB%8B%B9-2030%EB%B6%84%EC%9D%84-%EC%8D%BC%EC%96%B4%EC%9A%94-ugcPost-7452111760666292224-U3gv",
-      videoSrc: "/videos/dart-demo.mov",
+      videoSrc: "/videos/dart-demo.mp4",
     },
   ];
 
@@ -93,75 +95,6 @@ export const AIShowcase = () => {
         ))}
       </div>
 
-      {/* Funnel Flow Diagram - 3 cards → converge → 2 cards */}
-      <FadeIn delay={0.6}>
-        <div className="py-6 relative">
-          <svg
-            className="w-full h-40 md:h-48"
-            viewBox="0 0 400 120"
-            preserveAspectRatio="xMidYMid meet"
-            fill="none"
-          >
-            {/* 3 lines coming down from top (from 3 video cards) */}
-            {/* Left card line */}
-            <path
-              d="M 65 0 L 65 30 Q 65 45 120 50 L 200 55"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="text-foreground/25"
-              strokeLinecap="round"
-            />
-            {/* Center card line */}
-            <path
-              d="M 200 0 L 200 55"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="text-foreground/25"
-              strokeLinecap="round"
-            />
-            {/* Right card line */}
-            <path
-              d="M 335 0 L 335 30 Q 335 45 280 50 L 200 55"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="text-foreground/25"
-              strokeLinecap="round"
-            />
-
-            {/* Convergence point */}
-            <circle cx="200" cy="55" r="4" fill="currentColor" className="text-foreground/30" />
-
-            {/* Split to 2 landing pages */}
-            {/* To Landing Page 1 (left) */}
-            <path
-              d="M 200 55 L 200 70 Q 200 85 140 90 L 100 95 L 100 120"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="text-foreground/25"
-              strokeLinecap="round"
-            />
-            {/* To Landing Page 2 (right) */}
-            <path
-              d="M 200 55 L 200 70 Q 200 85 260 90 L 300 95 L 300 120"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="text-foreground/25"
-              strokeLinecap="round"
-            />
-
-            {/* Arrow heads pointing to cards below */}
-            <polygon points="100,120 95,110 105,110" fill="currentColor" className="text-foreground/35" />
-            <polygon points="300,120 295,110 305,110" fill="currentColor" className="text-foreground/35" />
-          </svg>
-
-          {/* Center label */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <span className="px-4 py-1.5 rounded-full bg-background text-xs text-foreground/50 uppercase tracking-wider border border-foreground/15">
-              Leads converge
-            </span>
-          </div>
-        </div>
-      </FadeIn>
     </section>
   );
 };

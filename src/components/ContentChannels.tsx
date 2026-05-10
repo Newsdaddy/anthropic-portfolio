@@ -58,7 +58,77 @@ export const ContentChannels = () => {
   ];
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="relative">
+      {/* Funnel Flow Diagram - extends from above to cards */}
+      <FadeIn delay={0.6}>
+        <div className="relative">
+          <svg
+            className="w-full h-80 md:h-96"
+            viewBox="0 0 400 280"
+            preserveAspectRatio="xMidYMid meet"
+            fill="none"
+          >
+            {/* 3 lines coming down from top (from 3 video cards) */}
+            {/* Left card line */}
+            <path
+              d="M 65 0 L 65 40 Q 65 60 130 70 L 200 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+            {/* Center card line */}
+            <path
+              d="M 200 0 L 200 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+            {/* Right card line */}
+            <path
+              d="M 335 0 L 335 40 Q 335 60 270 70 L 200 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+
+            {/* Convergence point */}
+            <circle cx="200" cy="80" r="5" fill="currentColor" className="text-foreground/30" />
+
+            {/* Split to 2 landing pages - long lines reaching cards */}
+            {/* To Landing Page 1 (left) */}
+            <path
+              d="M 200 80 L 200 140 Q 200 170 140 190 L 100 210 L 100 275"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+            {/* To Landing Page 2 (right) */}
+            <path
+              d="M 200 80 L 200 140 Q 200 170 260 190 L 300 210 L 300 275"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+
+            {/* Arrow heads pointing to cards below */}
+            <polygon points="100,280 93,265 107,265" fill="currentColor" className="text-foreground/35" />
+            <polygon points="300,280 293,265 307,265" fill="currentColor" className="text-foreground/35" />
+          </svg>
+
+          {/* Center label */}
+          <div className="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <span className="px-4 py-1.5 rounded-full bg-background text-xs text-foreground/50 uppercase tracking-wider border border-foreground/15">
+              Leads converge
+            </span>
+          </div>
+        </div>
+      </FadeIn>
+
       <FadeIn delay={0.65}>
         <p className="anthropic-label mb-6">Where Leads Converge</p>
       </FadeIn>
