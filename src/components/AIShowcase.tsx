@@ -93,15 +93,58 @@ export const AIShowcase = () => {
         ))}
       </div>
 
-      {/* Funnel Arrow */}
+      {/* Funnel Flow Diagram */}
       <FadeIn delay={0.6}>
-        <div className="flex flex-col items-center py-8">
-          <div className="flex items-center gap-3 text-foreground/40">
-            <div className="h-px w-16 bg-foreground/20" />
-            <ArrowDown size={24} className="animate-bounce" />
-            <div className="h-px w-16 bg-foreground/20" />
+        <div className="py-10 relative">
+          {/* Flow lines SVG */}
+          <svg
+            className="w-full h-24 md:h-32"
+            viewBox="0 0 400 80"
+            preserveAspectRatio="xMidYMid meet"
+            fill="none"
+          >
+            {/* Left line: from card 1 to LP1 */}
+            <path
+              d="M 65 0 L 65 25 Q 65 40 100 40 L 140 40 Q 155 40 155 55 L 155 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/20"
+              strokeLinecap="round"
+            />
+            {/* Center line: from card 2 splits to both */}
+            <path
+              d="M 200 0 L 200 25 Q 200 40 155 55 L 155 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/20"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 200 0 L 200 25 Q 200 40 245 55 L 245 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/20"
+              strokeLinecap="round"
+            />
+            {/* Right line: from card 3 to LP2 */}
+            <path
+              d="M 335 0 L 335 25 Q 335 40 300 40 L 260 40 Q 245 40 245 55 L 245 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/20"
+              strokeLinecap="round"
+            />
+            {/* Arrow heads */}
+            <polygon points="155,80 150,70 160,70" fill="currentColor" className="text-foreground/30" />
+            <polygon points="245,80 240,70 250,70" fill="currentColor" className="text-foreground/30" />
+          </svg>
+
+          {/* Label */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="px-4 py-1.5 rounded-full bg-background text-xs text-foreground/40 uppercase tracking-wider border border-foreground/10">
+              Leads converge
+            </span>
           </div>
-          <p className="text-xs text-foreground/40 mt-3 uppercase tracking-wider">Leads flow down</p>
         </div>
       </FadeIn>
     </section>
