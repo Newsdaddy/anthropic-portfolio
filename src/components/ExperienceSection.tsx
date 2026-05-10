@@ -32,7 +32,7 @@ export const ExperienceSection = () => {
       period: "2012 — 2014",
       role: "Announcer",
       company: "Busan MBC",
-      highlight: "Financial broadcasting specialist",
+      highlight: "Daily news, financial broadcasting",
     },
     {
       period: "2011 — 2012",
@@ -44,7 +44,7 @@ export const ExperienceSection = () => {
       period: "2008",
       role: "Soldier",
       company: "Zaytun Division, Iraq",
-      highlight: "Heavy & special vehicle operator",
+      highlight: "Heavy vehicle operator, interpreter",
     },
   ];
 
