@@ -42,23 +42,6 @@ export const HeroSection = () => {
 
   return (
     <section className="pt-8 pb-6 sm:pt-12 sm:pb-8 md:pt-16 md:pb-12 relative">
-      {/* Spline 3D - Dedicated Section */}
-      <FadeIn delay={0.3}>
-        <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] rounded-2xl overflow-hidden mb-8 sm:mb-10 md:mb-12 relative bg-secondary/50">
-          <iframe
-            src="https://my.spline.design/claritystream-wNLLGZz7kmO8goHlJ3UpH79v/"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-            style={{ border: 'none', display: 'block', background: 'transparent', pointerEvents: 'none' }}
-            title="3D Background"
-            allow="fullscreen"
-            allowFullScreen
-            loading="lazy"
-          />
-        </div>
-      </FadeIn>
-
       <div className="flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 md:gap-12">
         <FadeIn>
           <div 
