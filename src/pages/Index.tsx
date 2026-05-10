@@ -4,6 +4,7 @@ import { CareerSection } from "@/components/CareerSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { AIShowcase } from "@/components/AIShowcase";
+import { ContentChannels } from "@/components/ContentChannels";
 import { SocialLinks } from "@/components/SocialLinks";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -14,6 +15,7 @@ const Index = () => {
         <HeroSection />
         <HighlightsSection />
         <AIShowcase />
+        <ContentChannels />
         <CareerSection />
         <ExperienceSection />
         <SkillsSection />
