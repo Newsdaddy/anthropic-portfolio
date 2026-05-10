@@ -198,30 +198,30 @@ export const ContentChannels = () => {
         </FadeIn>
         <FadeIn delay={1.0}>
           {/* Flow Header - Arrow Steps */}
-          <div className="flex items-center mb-6 overflow-x-auto pb-2">
-            <span className="px-4 py-2 rounded-full bg-gray-500 text-white text-xs font-bold shrink-0">Flows</span>
-            <div className="flex flex-1 ml-2">
-              {["Lead Acquisition", "Business Development", "Negotiation & Closing", "Onboarding & Use", "Farming & Upsell"].map((step, idx) => (
-                <div key={step} className="flex items-center shrink-0">
-                  <div
-                    className="px-4 py-2 text-xs font-bold text-white relative"
-                    style={{
-                      backgroundColor: idx === 4 ? '#1a1a1a' : '#4a4a4a',
-                      clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%, 12px 50%)',
-                      marginLeft: idx === 0 ? '0' : '-8px',
-                      paddingLeft: idx === 0 ? '16px' : '20px',
-                    }}
-                  >
-                    {step}
-                  </div>
-                </div>
-              ))}
+          <div className="grid grid-cols-6 gap-1 mb-4">
+            <div className="flex items-center justify-center">
+              <span className="px-3 py-2 rounded-full bg-gray-500 text-white text-xs font-bold">Flows</span>
             </div>
+            {["Lead Acquisition", "Business Development", "Negotiation & Closing", "Onboarding & Use", "Farming & Upsell"].map((step, idx) => (
+              <div key={step} className="flex items-center">
+                <div
+                  className="w-full py-2 text-xs font-bold text-white text-center"
+                  style={{
+                    backgroundColor: idx === 4 ? '#1a1a1a' : '#4a4a4a',
+                    clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%, 10px 50%)',
+                    paddingLeft: '14px',
+                    paddingRight: '14px',
+                  }}
+                >
+                  {step}
+                </div>
+              </div>
+            ))}
           </div>
 
-          {/* Two Rows: Clients & Byeongjin */}
-          <div className="grid grid-cols-5 gap-2 mb-2">
-            <div className="flex items-center"><span className="text-sm font-bold" style={{ color: '#D4714A' }}>Clients</span></div>
+          {/* Clients Row */}
+          <div className="grid grid-cols-6 gap-1 mb-1">
+            <div className="flex items-start pt-3"><span className="text-sm font-bold" style={{ color: '#D4714A' }}>Clients</span></div>
             {[
               ["Referral from existing clients", "SEO / website inbound", "Demo request", "Reports request"],
               ["Introduce solution to stakeholders", "Meeting with key stakeholders", "Discuss common topics (idioms)", "Value proposition", "Demo presentation", "Q&A session"],
@@ -229,9 +229,9 @@ export const ContentChannels = () => {
               ["Payment processing", "Internal admin setup", "Onboarding training", "Regular check-in meetings", "Usage Q&A support", "New feature info updates"],
               ["Renewal negotiation", "Add-on product proposal", "New feature updates", "Pricing guide", "Discuss common topics (idioms)"],
             ].map((items, idx) => (
-              <div key={idx} className="p-3 rounded-lg text-white text-xs" style={{ backgroundColor: '#C9735B' }}>
-                <ul className="space-y-1">
-                  {items.slice(0, 4).map((item, i) => (
+              <div key={idx} className="p-2 rounded-lg text-white" style={{ backgroundColor: '#C9735B', fontSize: '10px' }}>
+                <ul className="space-y-0.5">
+                  {items.map((item, i) => (
                     <li key={i}>• {item}</li>
                   ))}
                 </ul>
@@ -239,8 +239,9 @@ export const ContentChannels = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-5 gap-2">
-            <div className="flex items-center"><span className="text-sm font-bold" style={{ color: '#D4714A' }}>Byeongjin</span></div>
+          {/* Byeongjin Row */}
+          <div className="grid grid-cols-6 gap-1">
+            <div className="flex items-start pt-3"><span className="text-sm font-bold text-white">Byeongjin</span></div>
             {[
               ["TAM-SAM-SOM analysis & ICP definition", "LinkedIn lead generation", "SalesNavigator cold outreach", "AX based on Claude Code B2B seminar, workshops conduct by me", "Various Joint webinar / seminar"],
               [],
@@ -248,9 +249,9 @@ export const ContentChannels = () => {
               [],
               [],
             ].map((items, idx) => (
-              <div key={idx} className={`p-3 rounded-lg text-xs ${items.length > 0 ? 'text-card-foreground bg-card border border-card-foreground/10' : ''}`}>
+              <div key={idx} className={`p-2 rounded-lg ${items.length > 0 ? 'text-card-foreground bg-card border border-card-foreground/10' : ''}`} style={{ fontSize: '10px' }}>
                 {items.length > 0 && (
-                  <ul className="space-y-1">
+                  <ul className="space-y-0.5">
                     {items.map((item, i) => (
                       <li key={i}>• {item}</li>
                     ))}
