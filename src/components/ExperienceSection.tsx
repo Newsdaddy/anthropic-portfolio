@@ -51,7 +51,7 @@ export const ExperienceSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.8}>
-        <p className="anthropic-label mb-6">Earlier Experience</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Earlier Experience</p>
       </FadeIn>
 
       <div className="space-y-3">

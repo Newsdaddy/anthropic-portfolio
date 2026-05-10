@@ -139,7 +139,7 @@ export const CareerSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.5}>
-        <p className="anthropic-label mb-6">Career</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Career</p>
       </FadeIn>
 
       <div className="grid gap-4 md:gap-6">

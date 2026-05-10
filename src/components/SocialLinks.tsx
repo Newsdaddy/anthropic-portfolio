@@ -54,7 +54,7 @@ export const SocialLinks = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={1.1}>
-        <p className="anthropic-label mb-6">Connect</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Connect</p>
       </FadeIn>
 
       <div className="grid gap-3 md:grid-cols-3">

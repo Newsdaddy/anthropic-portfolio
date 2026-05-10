@@ -37,7 +37,7 @@ export const SkillsSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.95}>
-        <p className="anthropic-label mb-6">Skills & Languages</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Skills & Languages</p>
       </FadeIn>
 
       <div className="flex flex-wrap gap-2">
