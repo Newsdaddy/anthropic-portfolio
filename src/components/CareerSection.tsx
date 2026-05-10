@@ -79,7 +79,7 @@ export const CareerSection = () => {
         "Corporate AX (AI Transformation) workshops using Claude Code for business leaders",
         "Won 2 enterprise training contracts within first 2 months",
         "Audience growth: Instagram +487%, LinkedIn +1,000, Newsletter 686 subscribers",
-        "Clients: KCIC, Midbar, AGC Asia Pacific",
+        "Claude Code Corporate Training: KCIC, Midbar, AGC Asia Pacific",
       ],
     },
     {
