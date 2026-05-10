@@ -316,14 +316,14 @@ export const ContentChannels = () => {
           <div className="space-y-0 overflow-x-auto">
             {/* Market Row */}
             <div className="flex">
-              <div className="w-24 shrink-0 bg-black text-white py-3 px-4 font-bold text-sm flex items-center">Market</div>
+              <div className="w-24 shrink-0 bg-gray-200 text-card-foreground py-3 px-4 font-bold text-sm flex items-center">Market</div>
               <div className="flex-1 bg-white py-3 px-4 text-sm text-card-foreground border-b border-card-foreground/10">
                 $900B valuation round in review (surpassing OpenAI's $852B) | $30B ARR (1,400% YoY growth) | Claude Code run-rate $2.5B+
               </div>
             </div>
             {/* Why Now Row */}
             <div className="flex">
-              <div className="w-24 shrink-0 bg-black text-white py-3 px-4 font-bold text-sm flex items-center">Why Now</div>
+              <div className="w-24 shrink-0 bg-gray-200 text-card-foreground py-3 px-4 font-bold text-sm flex items-center">Why Now</div>
               <div className="flex-1 bg-white py-3 px-4 text-sm text-card-foreground border-b border-card-foreground/10">
                 Korea Claude usage: Global Top 5 | Per-capita usage exceeds US | Claude Code weekly active users: 6x growth in 4 months
               </div>
