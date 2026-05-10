@@ -81,8 +81,11 @@ export const AIShowcase = () => {
 
   return (
     <section className="py-12 md:py-16">
+      <FadeIn delay={0.2}>
+        <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Business Development Funnel for Anthropic</h2>
+      </FadeIn>
       <FadeIn delay={0.25}>
-        <p className="anthropic-label mb-6">Building LinkedIn Lead Magnets with Claude Code</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Building LinkedIn Lead Magnets with Claude Code</p>
       </FadeIn>
 
       <div className="grid gap-4 md:grid-cols-3">

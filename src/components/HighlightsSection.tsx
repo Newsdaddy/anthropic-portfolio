@@ -54,7 +54,7 @@ export const HighlightsSection = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.3}>
-        <p className="anthropic-label mb-6">Highlights</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Highlights</p>
       </FadeIn>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-fr">

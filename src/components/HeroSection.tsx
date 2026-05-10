@@ -58,7 +58,7 @@ export const HeroSection = () => {
 
         <div className="flex-1 flex flex-col justify-end">
           <FadeIn delay={0.1}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-1" style={{ color: '#D4714A' }}>
               Byeongjin Jeong
             </h1>
           </FadeIn>

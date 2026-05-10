@@ -130,7 +130,7 @@ export const ContentChannels = () => {
       </FadeIn>
 
       <FadeIn delay={0.65}>
-        <p className="anthropic-label mb-6">Where Leads Converge</p>
+        <p className="anthropic-label mb-6" style={{ color: '#D4714A' }}>Where Leads Converge</p>
       </FadeIn>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -142,6 +142,54 @@ export const ContentChannels = () => {
           />
         ))}
       </div>
+
+      {/* Convergence Flow - Two lines merging */}
+      <FadeIn delay={0.85}>
+        <div className="relative">
+          <svg
+            className="w-full h-32 md:h-40"
+            viewBox="0 0 400 120"
+            preserveAspectRatio="xMidYMid meet"
+            fill="none"
+          >
+            {/* Left line from Landing Page 1 */}
+            <path
+              d="M 100 0 L 100 40 Q 100 60 150 70 L 200 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+            {/* Right line from Landing Page 2 */}
+            <path
+              d="M 300 0 L 300 40 Q 300 60 250 70 L 200 80"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+            {/* Convergence point */}
+            <circle cx="200" cy="80" r="5" fill="currentColor" className="text-foreground/30" />
+            {/* Arrow down */}
+            <path
+              d="M 200 80 L 200 115"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+            <polygon points="200,120 193,108 207,108" fill="currentColor" className="text-foreground/35" />
+          </svg>
+        </div>
+      </FadeIn>
+
+      {/* ICP Discovery Meeting Card */}
+      <FadeIn delay={0.9}>
+        <div className="anthropic-card text-center py-6">
+          <p className="text-lg font-bold text-card-foreground mb-2">ICP만 선별해 Discovery Meeting 전환</p>
+          <p className="text-sm text-card-foreground/60">Filtering qualified leads for high-conversion sales conversations</p>
+        </div>
+      </FadeIn>
     </section>
   );
 };
