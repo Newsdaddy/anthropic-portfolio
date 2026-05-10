@@ -82,7 +82,7 @@ export const AIShowcase = () => {
   return (
     <section className="py-12 md:py-16">
       <FadeIn delay={0.25}>
-        <p className="anthropic-label mb-6">How I Use Claude Code for Business Development</p>
+        <p className="anthropic-label mb-6">Building LinkedIn Lead Magnets with Claude Code</p>
       </FadeIn>
 
       <div className="grid gap-4 md:grid-cols-3">
