@@ -22,34 +22,34 @@
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 45 90% 55%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 16 53% 50%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 45 9% 66%;
+    --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 45 90% 55%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 16 53% 50%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 95%;
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 45 90% 55%;
+    --ring: 16 53% 50%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
+    /* Custom tokens - Anthropic Brand Colors */
     --text-subtle: 0 0% 70%;
     --text-muted: 0 0% 55%;
     --divider: 0 0% 15%;
     --hover-bg: 0 0% 8%;
-    --gradient-start: 45 90% 60%;
-    --gradient-end: 35 85% 50%;
+    --gradient-start: 16 53% 55%;
+    --gradient-end: 16 45% 45%;
   }
 }
 
@@ -108,7 +108,7 @@
   }
 
   .bg-gradient-primary {
-    background: linear-gradient(135deg, hsl(35 70% 25%), hsl(var(--gradient-start)));
+    background: linear-gradient(135deg, hsl(16 45% 30%), hsl(var(--gradient-start)));
   }
 
   .glow {
