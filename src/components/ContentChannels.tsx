@@ -186,7 +186,7 @@ export const ContentChannels = () => {
       {/* ICP Discovery Meeting Card */}
       <FadeIn delay={0.9}>
         <div className="anthropic-card text-center py-6">
-          <p className="text-lg font-bold text-card-foreground mb-2">ICP만 선별해 Discovery Meeting 전환</p>
+          <p className="text-lg font-bold text-card-foreground mb-2">Filter ICP → Convert to Discovery Meeting</p>
           <p className="text-sm text-card-foreground/60">Filtering qualified leads for high-conversion sales conversations</p>
         </div>
       </FadeIn>
