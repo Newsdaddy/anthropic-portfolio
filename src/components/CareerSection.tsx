@@ -14,16 +14,16 @@ interface CareerCardProps {
 const CareerCard = ({ number, period, role, company, location, achievements, videoSrc, delay }: CareerCardProps) => (
   <FadeIn delay={delay}>
     <div className="anthropic-card">
-      {/* Video Section */}
+      {/* Video Section - Fixed 16:9 aspect ratio for consistent sizing */}
       {videoSrc && (
-        <div className="relative aspect-video rounded-xl overflow-hidden bg-card-foreground/5 mb-5">
+        <div className="relative w-full mb-5" style={{ paddingBottom: '56.25%' }}>
           <video
             src={videoSrc}
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover rounded-xl"
           />
         </div>
       )}
@@ -73,6 +73,7 @@ export const CareerSection = () => {
       role: "Sr. Business Development Manager",
       company: "Statista GmbH",
       location: "Hamburg, Germany",
+      videoSrc: "/videos/statista-webinar.mp4",
       achievements: [
         "Built Korea market from scratch → 5× ARR growth in 4 years",
         "Closed 188 enterprise contracts (LG, Hyundai, Samsung, PwC, KPMG, Deloitte)",

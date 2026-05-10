@@ -93,55 +93,70 @@ export const AIShowcase = () => {
         ))}
       </div>
 
-      {/* Funnel Flow Diagram */}
+      {/* Funnel Flow Diagram - 3 cards → converge → 2 cards */}
       <FadeIn delay={0.6}>
-        <div className="py-10 relative">
-          {/* Flow lines SVG */}
+        <div className="py-6 relative">
           <svg
-            className="w-full h-24 md:h-32"
-            viewBox="0 0 400 80"
+            className="w-full h-40 md:h-48"
+            viewBox="0 0 400 120"
             preserveAspectRatio="xMidYMid meet"
             fill="none"
           >
-            {/* Left line: from card 1 to LP1 */}
+            {/* 3 lines coming down from top (from 3 video cards) */}
+            {/* Left card line */}
             <path
-              d="M 65 0 L 65 25 Q 65 40 100 40 L 140 40 Q 155 40 155 55 L 155 80"
+              d="M 65 0 L 65 30 Q 65 45 120 50 L 200 55"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="text-foreground/20"
+              className="text-foreground/25"
               strokeLinecap="round"
             />
-            {/* Center line: from card 2 splits to both */}
+            {/* Center card line */}
             <path
-              d="M 200 0 L 200 25 Q 200 40 155 55 L 155 80"
+              d="M 200 0 L 200 55"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="text-foreground/20"
+              className="text-foreground/25"
               strokeLinecap="round"
             />
+            {/* Right card line */}
             <path
-              d="M 200 0 L 200 25 Q 200 40 245 55 L 245 80"
+              d="M 335 0 L 335 30 Q 335 45 280 50 L 200 55"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="text-foreground/20"
+              className="text-foreground/25"
               strokeLinecap="round"
             />
-            {/* Right line: from card 3 to LP2 */}
+
+            {/* Convergence point */}
+            <circle cx="200" cy="55" r="4" fill="currentColor" className="text-foreground/30" />
+
+            {/* Split to 2 landing pages */}
+            {/* To Landing Page 1 (left) */}
             <path
-              d="M 335 0 L 335 25 Q 335 40 300 40 L 260 40 Q 245 40 245 55 L 245 80"
+              d="M 200 55 L 200 70 Q 200 85 140 90 L 100 95 L 100 120"
               stroke="currentColor"
               strokeWidth="1.5"
-              className="text-foreground/20"
+              className="text-foreground/25"
               strokeLinecap="round"
             />
-            {/* Arrow heads */}
-            <polygon points="155,80 150,70 160,70" fill="currentColor" className="text-foreground/30" />
-            <polygon points="245,80 240,70 250,70" fill="currentColor" className="text-foreground/30" />
+            {/* To Landing Page 2 (right) */}
+            <path
+              d="M 200 55 L 200 70 Q 200 85 260 90 L 300 95 L 300 120"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="text-foreground/25"
+              strokeLinecap="round"
+            />
+
+            {/* Arrow heads pointing to cards below */}
+            <polygon points="100,120 95,110 105,110" fill="currentColor" className="text-foreground/35" />
+            <polygon points="300,120 295,110 305,110" fill="currentColor" className="text-foreground/35" />
           </svg>
 
-          {/* Label */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="px-4 py-1.5 rounded-full bg-background text-xs text-foreground/40 uppercase tracking-wider border border-foreground/10">
+          {/* Center label */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <span className="px-4 py-1.5 rounded-full bg-background text-xs text-foreground/50 uppercase tracking-wider border border-foreground/15">
               Leads converge
             </span>
           </div>
